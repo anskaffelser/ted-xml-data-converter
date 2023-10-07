@@ -220,4 +220,13 @@
       <ted>ME</ted>
       <eforms>CNR</eforms>
    </language>
+   <!-- added dfo -->
+   <language>
+      <ted>NB</ted>
+      <eforms>NOB</eforms>
+   </language>
+   <language>
+      <ted>NY</ted>
+      <eforms>NYN</eforms>
+   </language>   
 </languages>
