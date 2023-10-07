@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <mapping name="form-notice-mapping">
    <row rowpos="2">
       <form-element>F01_2014</form-element>
@@ -6,7 +5,7 @@
       <notice-type>PRI_CALL_COMPETITION</notice-type>
       <directive>ANY</directive>
       <legal-basis>ANY</legal-basis>
-      <document-code>A</document-code>
+      <document-code>ANY</document-code>
       <document-type>Prior information notice with call for competition</document-type>
       <eforms-subtype>10</eforms-subtype>
       <notice-description>Prior information notice used as a call for competition - general directive, standard regime</notice-description>
@@ -17,10 +16,10 @@
       <notice-type>PRI_ONLY</notice-type>
       <directive>ANY</directive>
       <legal-basis>ANY</legal-basis>
-      <document-code>0</document-code>
+      <document-code>ANY</document-code>
       <document-type>Prior information notice without call for competition</document-type>
       <eforms-subtype>4</eforms-subtype>
-      <notice-description>Prior information notice used only for information – general directive</notice-description>
+      <notice-description>Prior information notice used only for information &#8211; general directive</notice-description>
    </row>
    <row rowpos="11">
       <form-element>F01_2014</form-element>
@@ -28,10 +27,10 @@
       <notice-type>PRI_REDUCING_TIME_LIMITS</notice-type>
       <directive>ANY</directive>
       <legal-basis>ANY</legal-basis>
-      <document-code>0</document-code>
+      <document-code>ANY</document-code>
       <document-type>Prior information notice without call for competition</document-type>
       <eforms-subtype>7</eforms-subtype>
-      <notice-description>Prior information notice used to shorten time limits for receipt of tenders – general directive</notice-description>
+      <notice-description>Prior information notice used to shorten time limits for receipt of tenders &#8211; general directive</notice-description>
    </row>
    <row rowpos="16">
       <form-element>F02_2014</form-element>
@@ -42,7 +41,7 @@
       <document-code>3</document-code>
       <document-type>Contract notice</document-type>
       <eforms-subtype>16</eforms-subtype>
-      <notice-description>Contract notice – general directive, standard regime</notice-description>
+      <notice-description>Contract notice &#8211; general directive, standard regime</notice-description>
    </row>
    <row rowpos="18">
       <form-element>F02_2014</form-element>
@@ -53,7 +52,7 @@
       <document-code>Y</document-code>
       <document-type>Dynamic purchasing system</document-type>
       <eforms-subtype>16</eforms-subtype>
-      <notice-description>Contract notice – general directive, standard regime</notice-description>
+      <notice-description>Contract notice &#8211; general directive, standard regime</notice-description>
    </row>
    <row rowpos="24">
       <form-element>F03_2014</form-element>
@@ -64,7 +63,7 @@
       <document-code>7</document-code>
       <document-type>Contract award notice</document-type>
       <eforms-subtype>29</eforms-subtype>
-      <notice-description>Contract award notice – general directive, standard regime</notice-description>
+      <notice-description>Contract award notice &#8211; general directive, standard regime</notice-description>
    </row>
    <row rowpos="29">
       <form-element>F04_2014</form-element>
@@ -86,7 +85,7 @@
       <document-code>P</document-code>
       <document-type>Periodic indicative notice without call for competition</document-type>
       <eforms-subtype>5</eforms-subtype>
-      <notice-description>Periodic indicative notice used only for information – sectoral directive</notice-description>
+      <notice-description>Periodic indicative notice used only for information &#8211; sectoral directive</notice-description>
    </row>
    <row rowpos="33">
       <form-element>F04_2014</form-element>
@@ -97,7 +96,7 @@
       <document-code>P</document-code>
       <document-type>Periodic indicative notice without call for competition</document-type>
       <eforms-subtype>8</eforms-subtype>
-      <notice-description>Periodic indicative notice used to shorten time limits for receipt of tenders – sectoral directive</notice-description>
+      <notice-description>Periodic indicative notice used to shorten time limits for receipt of tenders &#8211; sectoral directive</notice-description>
    </row>
    <row rowpos="35">
       <form-element>F05_2014</form-element>
@@ -108,7 +107,7 @@
       <document-code>3</document-code>
       <document-type>Contract notice</document-type>
       <eforms-subtype>17</eforms-subtype>
-      <notice-description>Contract notice – sectoral directive, standard regime</notice-description>
+      <notice-description>Contract notice &#8211; sectoral directive, standard regime</notice-description>
    </row>
    <row rowpos="36">
       <form-element>F05_2014</form-element>
@@ -119,7 +118,7 @@
       <document-code>Y</document-code>
       <document-type>Dynamic purchasing system</document-type>
       <eforms-subtype>17</eforms-subtype>
-      <notice-description>Contract notice – sectoral directive, standard regime</notice-description>
+      <notice-description>Contract notice &#8211; sectoral directive, standard regime</notice-description>
    </row>
    <row rowpos="39">
       <form-element>F06_2014</form-element>
@@ -130,7 +129,7 @@
       <document-code>7</document-code>
       <document-type>Contract award notice</document-type>
       <eforms-subtype>30</eforms-subtype>
-      <notice-description>Contract award notice – sectoral directive, standard regime</notice-description>
+      <notice-description>Contract award notice &#8211; sectoral directive, standard regime</notice-description>
    </row>
    <row rowpos="41">
       <form-element>F07_2014</form-element>
@@ -141,7 +140,7 @@
       <document-code>Q</document-code>
       <document-type>Qualification system without call for competition</document-type>
       <eforms-subtype>15</eforms-subtype>
-      <notice-description>Notice on the existence of a qualification system – sectoral directive</notice-description>
+      <notice-description>Notice on the existence of a qualification system &#8211; sectoral directive</notice-description>
    </row>
    <row rowpos="43">
       <form-element>F07_2014</form-element>
@@ -152,7 +151,7 @@
       <document-code>O</document-code>
       <document-type>Qualification system with call for competition</document-type>
       <eforms-subtype>15</eforms-subtype>
-      <notice-description>Notice on the existence of a qualification system – sectoral directive</notice-description>
+      <notice-description>Notice on the existence of a qualification system &#8211; sectoral directive</notice-description>
    </row>
    <row rowpos="45">
       <form-element>F08_2014</form-element>
@@ -160,7 +159,7 @@
       <notice-type/>
       <directive/>
       <legal-basis>32009L0081</legal-basis>
-      <document-code>B</document-code>
+      <document-code>ANY</document-code>
       <document-type>Buyer profile</document-type>
       <eforms-subtype>3</eforms-subtype>
       <notice-description>Notice of the publication of a prior information notice on a buyer profile - defence directive</notice-description>
@@ -171,7 +170,7 @@
       <notice-type/>
       <directive/>
       <legal-basis>32014L0024</legal-basis>
-      <document-code>B</document-code>
+      <document-code>ANY</document-code>
       <document-type>Buyer profile</document-type>
       <eforms-subtype>1</eforms-subtype>
       <notice-description>Notice of the publication of a prior information notice on a buyer profile - general directive</notice-description>
@@ -182,7 +181,7 @@
       <notice-type/>
       <directive/>
       <legal-basis>32014L0025</legal-basis>
-      <document-code>B</document-code>
+      <document-code>ANY</document-code>
       <document-type>Buyer profile</document-type>
       <eforms-subtype>2</eforms-subtype>
       <notice-description>Notice of the publication of a periodic indicative notice on a buyer profile - sectoral directive</notice-description>
@@ -193,7 +192,7 @@
       <notice-type/>
       <directive>2009/81/EC</directive>
       <legal-basis/>
-      <document-code>B</document-code>
+      <document-code>ANY</document-code>
       <document-type>Buyer profile</document-type>
       <eforms-subtype>3</eforms-subtype>
       <notice-description>Notice of the publication of a prior information notice on a buyer profile - defence directive</notice-description>
@@ -204,7 +203,7 @@
       <notice-type/>
       <directive>2014/24/EU</directive>
       <legal-basis/>
-      <document-code>B</document-code>
+      <document-code>ANY</document-code>
       <document-type>Buyer profile</document-type>
       <eforms-subtype>1</eforms-subtype>
       <notice-description>Notice of the publication of a prior information notice on a buyer profile - general directive</notice-description>
@@ -215,7 +214,7 @@
       <notice-type/>
       <directive>2014/25/EU</directive>
       <legal-basis/>
-      <document-code>B</document-code>
+      <document-code>ANY</document-code>
       <document-type>Buyer profile</document-type>
       <eforms-subtype>2</eforms-subtype>
       <notice-description>Notice of the publication of a periodic indicative notice on a buyer profile - sectoral directive</notice-description>
@@ -226,10 +225,10 @@
       <notice-type/>
       <directive/>
       <legal-basis>32014L0024</legal-basis>
-      <document-code>D</document-code>
+      <document-code>ANY</document-code>
       <document-type>Design contest</document-type>
       <eforms-subtype>23</eforms-subtype>
-      <notice-description>Design contest notice – general directive, design</notice-description>
+      <notice-description>Design contest notice &#8211; general directive, design</notice-description>
    </row>
    <row rowpos="52">
       <form-element>F12_2014</form-element>
@@ -237,10 +236,10 @@
       <notice-type/>
       <directive/>
       <legal-basis>32014L0025</legal-basis>
-      <document-code>D</document-code>
+      <document-code>ANY</document-code>
       <document-type>Design contest</document-type>
       <eforms-subtype>24</eforms-subtype>
-      <notice-description>Design contest notice – sectoral directive, design</notice-description>
+      <notice-description>Design contest notice &#8211; sectoral directive, design</notice-description>
    </row>
    <row rowpos="53">
       <form-element>F12_2014</form-element>
@@ -248,10 +247,10 @@
       <notice-type/>
       <directive>2014/24/EU</directive>
       <legal-basis/>
-      <document-code>D</document-code>
+      <document-code>ANY</document-code>
       <document-type>Design contest</document-type>
       <eforms-subtype>23</eforms-subtype>
-      <notice-description>Design contest notice – general directive, design</notice-description>
+      <notice-description>Design contest notice &#8211; general directive, design</notice-description>
    </row>
    <row rowpos="54">
       <form-element>F12_2014</form-element>
@@ -259,10 +258,10 @@
       <notice-type/>
       <directive>2014/25/EU</directive>
       <legal-basis/>
-      <document-code>D</document-code>
+      <document-code>ANY</document-code>
       <document-type>Design contest</document-type>
       <eforms-subtype>24</eforms-subtype>
-      <notice-description>Design contest notice – sectoral directive, design</notice-description>
+      <notice-description>Design contest notice &#8211; sectoral directive, design</notice-description>
    </row>
    <row rowpos="55">
       <form-element>F13_2014</form-element>
@@ -273,7 +272,7 @@
       <document-code>R</document-code>
       <document-type>Results of design contests</document-type>
       <eforms-subtype>36</eforms-subtype>
-      <notice-description>Design contest result notice – general directive, design</notice-description>
+      <notice-description>Design contest result notice &#8211; general directive, design</notice-description>
    </row>
    <row rowpos="56">
       <form-element>F13_2014</form-element>
@@ -284,7 +283,7 @@
       <document-code>R</document-code>
       <document-type>Results of design contests</document-type>
       <eforms-subtype>37</eforms-subtype>
-      <notice-description>Design contest result notice – sectoral directive, design</notice-description>
+      <notice-description>Design contest result notice &#8211; sectoral directive, design</notice-description>
    </row>
    <row rowpos="57">
       <form-element>F13_2014</form-element>
@@ -295,7 +294,7 @@
       <document-code>R</document-code>
       <document-type>Results of design contests</document-type>
       <eforms-subtype>36</eforms-subtype>
-      <notice-description>Design contest result notice – general directive, design</notice-description>
+      <notice-description>Design contest result notice &#8211; general directive, design</notice-description>
    </row>
    <row rowpos="58">
       <form-element>F13_2014</form-element>
@@ -306,7 +305,7 @@
       <document-code>R</document-code>
       <document-type>Results of design contests</document-type>
       <eforms-subtype>37</eforms-subtype>
-      <notice-description>Design contest result notice – sectoral directive, design</notice-description>
+      <notice-description>Design contest result notice &#8211; sectoral directive, design</notice-description>
    </row>
    <row rowpos="59">
       <form-element>F14_2014</form-element>
@@ -336,10 +335,10 @@
       <notice-type/>
       <directive/>
       <legal-basis>32009L0081</legal-basis>
-      <document-code>V</document-code>
+      <document-code>ANY</document-code>
       <document-type>Voluntary ex ante transparency notice</document-type>
       <eforms-subtype>27</eforms-subtype>
-      <notice-description>Voluntary ex-ante transparency notice – defence directive</notice-description>
+      <notice-description>Voluntary ex-ante transparency notice &#8211; defence directive</notice-description>
    </row>
    <row rowpos="83">
       <form-element>F15_2014</form-element>
@@ -347,10 +346,10 @@
       <notice-type/>
       <directive/>
       <legal-basis>32014L0023</legal-basis>
-      <document-code>V</document-code>
+      <document-code>ANY</document-code>
       <document-type>Voluntary ex ante transparency notice</document-type>
       <eforms-subtype>28</eforms-subtype>
-      <notice-description>Voluntary ex-ante transparency notice – concession directive</notice-description>
+      <notice-description>Voluntary ex-ante transparency notice &#8211; concession directive</notice-description>
    </row>
    <row rowpos="84">
       <form-element>F15_2014</form-element>
@@ -358,10 +357,10 @@
       <notice-type/>
       <directive/>
       <legal-basis>32014L0024</legal-basis>
-      <document-code>V</document-code>
+      <document-code>ANY</document-code>
       <document-type>Voluntary ex ante transparency notice</document-type>
       <eforms-subtype>25</eforms-subtype>
-      <notice-description>Voluntary ex-ante transparency notice – general directive</notice-description>
+      <notice-description>Voluntary ex-ante transparency notice &#8211; general directive</notice-description>
    </row>
    <row rowpos="85">
       <form-element>F15_2014</form-element>
@@ -369,10 +368,10 @@
       <notice-type/>
       <directive/>
       <legal-basis>32014L0025</legal-basis>
-      <document-code>V</document-code>
+      <document-code>ANY</document-code>
       <document-type>Voluntary ex ante transparency notice</document-type>
       <eforms-subtype>26</eforms-subtype>
-      <notice-description>Voluntary ex-ante transparency notice – sectoral directive</notice-description>
+      <notice-description>Voluntary ex-ante transparency notice &#8211; sectoral directive</notice-description>
    </row>
    <row rowpos="86">
       <form-element>F15_2014</form-element>
@@ -380,10 +379,10 @@
       <notice-type/>
       <directive>2009/81/EC</directive>
       <legal-basis/>
-      <document-code>V</document-code>
+      <document-code>ANY</document-code>
       <document-type>Voluntary ex ante transparency notice</document-type>
       <eforms-subtype>27</eforms-subtype>
-      <notice-description>Voluntary ex-ante transparency notice – defence directive</notice-description>
+      <notice-description>Voluntary ex-ante transparency notice &#8211; defence directive</notice-description>
    </row>
    <row rowpos="87">
       <form-element>F15_2014</form-element>
@@ -391,10 +390,10 @@
       <notice-type/>
       <directive>2014/23/EU</directive>
       <legal-basis/>
-      <document-code>V</document-code>
+      <document-code>ANY</document-code>
       <document-type>Voluntary ex ante transparency notice</document-type>
       <eforms-subtype>28</eforms-subtype>
-      <notice-description>Voluntary ex-ante transparency notice – concession directive</notice-description>
+      <notice-description>Voluntary ex-ante transparency notice &#8211; concession directive</notice-description>
    </row>
    <row rowpos="88">
       <form-element>F15_2014</form-element>
@@ -402,10 +401,10 @@
       <notice-type/>
       <directive>2014/24/EU</directive>
       <legal-basis/>
-      <document-code>V</document-code>
+      <document-code>ANY</document-code>
       <document-type>Voluntary ex ante transparency notice</document-type>
       <eforms-subtype>25</eforms-subtype>
-      <notice-description>Voluntary ex-ante transparency notice – general directive</notice-description>
+      <notice-description>Voluntary ex-ante transparency notice &#8211; general directive</notice-description>
    </row>
    <row rowpos="89">
       <form-element>F15_2014</form-element>
@@ -413,10 +412,10 @@
       <notice-type/>
       <directive>2014/25/EU</directive>
       <legal-basis/>
-      <document-code>V</document-code>
+      <document-code>ANY</document-code>
       <document-type>Voluntary ex ante transparency notice</document-type>
       <eforms-subtype>28</eforms-subtype>
-      <notice-description>Voluntary ex-ante transparency notice – concession directive</notice-description>
+      <notice-description>Voluntary ex-ante transparency notice &#8211; concession directive</notice-description>
    </row>
    <row rowpos="90">
       <form-element>F20_2014</form-element>
@@ -424,10 +423,10 @@
       <notice-type/>
       <directive/>
       <legal-basis>32004L0017</legal-basis>
-      <document-code>K</document-code>
+      <document-code>ANY</document-code>
       <document-type>Modification of a contract/concession during its term</document-type>
       <eforms-subtype>39</eforms-subtype>
-      <notice-description>Contract modification notice – sectoral directive</notice-description>
+      <notice-description>Contract modification notice &#8211; sectoral directive</notice-description>
    </row>
    <row rowpos="91">
       <form-element>F20_2014</form-element>
@@ -435,10 +434,10 @@
       <notice-type/>
       <directive/>
       <legal-basis>32004L0018</legal-basis>
-      <document-code>K</document-code>
+      <document-code>ANY</document-code>
       <document-type>Modification of a contract/concession during its term</document-type>
       <eforms-subtype>38</eforms-subtype>
-      <notice-description>Contract modification notice – general directive</notice-description>
+      <notice-description>Contract modification notice &#8211; general directive</notice-description>
    </row>
    <row rowpos="92">
       <form-element>F20_2014</form-element>
@@ -446,7 +445,7 @@
       <notice-type/>
       <directive/>
       <legal-basis>32007R1370</legal-basis>
-      <document-code>K</document-code>
+      <document-code>ANY</document-code>
       <document-type>Modification of a contract/concession during its term</document-type>
       <eforms-subtype>MOVE</eforms-subtype>
       <notice-description/>
@@ -457,7 +456,7 @@
       <notice-type/>
       <directive/>
       <legal-basis>32009L0081</legal-basis>
-      <document-code>K</document-code>
+      <document-code>ANY</document-code>
       <document-type>Modification of a contract/concession during its term</document-type>
       <eforms-subtype>ERROR</eforms-subtype>
       <notice-description/>
@@ -468,10 +467,10 @@
       <notice-type/>
       <directive/>
       <legal-basis>32012R0966</legal-basis>
-      <document-code>K</document-code>
+      <document-code>ANY</document-code>
       <document-type>Modification of a contract/concession during its term</document-type>
       <eforms-subtype>38</eforms-subtype>
-      <notice-description>Contract modification notice – general directive</notice-description>
+      <notice-description>Contract modification notice &#8211; general directive</notice-description>
    </row>
    <row rowpos="95">
       <form-element>F20_2014</form-element>
@@ -479,10 +478,10 @@
       <notice-type/>
       <directive/>
       <legal-basis>32014L0023</legal-basis>
-      <document-code>K</document-code>
+      <document-code>ANY</document-code>
       <document-type>Modification of a contract/concession during its term</document-type>
       <eforms-subtype>40</eforms-subtype>
-      <notice-description>Contract modification notice – concessions directive</notice-description>
+      <notice-description>Contract modification notice &#8211; concessions directive</notice-description>
    </row>
    <row rowpos="96">
       <form-element>F20_2014</form-element>
@@ -490,10 +489,10 @@
       <notice-type/>
       <directive/>
       <legal-basis>32014L0024</legal-basis>
-      <document-code>K</document-code>
+      <document-code>ANY</document-code>
       <document-type>Modification of a contract/concession during its term</document-type>
       <eforms-subtype>38</eforms-subtype>
-      <notice-description>Contract modification notice – general directive</notice-description>
+      <notice-description>Contract modification notice &#8211; general directive</notice-description>
    </row>
    <row rowpos="97">
       <form-element>F20_2014</form-element>
@@ -501,10 +500,10 @@
       <notice-type/>
       <directive/>
       <legal-basis>32014L0025</legal-basis>
-      <document-code>K</document-code>
+      <document-code>ANY</document-code>
       <document-type>Modification of a contract/concession during its term</document-type>
       <eforms-subtype>39</eforms-subtype>
-      <notice-description>Contract modification notice – sectoral directive</notice-description>
+      <notice-description>Contract modification notice &#8211; sectoral directive</notice-description>
    </row>
    <row rowpos="98">
       <form-element>F20_2014</form-element>
@@ -512,10 +511,10 @@
       <notice-type/>
       <directive/>
       <legal-basis>32018R1046</legal-basis>
-      <document-code>K</document-code>
+      <document-code>ANY</document-code>
       <document-type>Modification of a contract/concession during its term</document-type>
       <eforms-subtype>38</eforms-subtype>
-      <notice-description>Contract modification notice – general directive</notice-description>
+      <notice-description>Contract modification notice &#8211; general directive</notice-description>
    </row>
    <row rowpos="99">
       <form-element>F20_2014</form-element>
@@ -523,7 +522,7 @@
       <notice-type/>
       <directive/>
       <legal-basis>OTHER</legal-basis>
-      <document-code>K</document-code>
+      <document-code>ANY</document-code>
       <document-type>Modification of a contract/concession during its term</document-type>
       <eforms-subtype>ERROR</eforms-subtype>
       <notice-description/>
@@ -534,10 +533,10 @@
       <notice-type/>
       <directive>2014/23/EU</directive>
       <legal-basis/>
-      <document-code>K</document-code>
+      <document-code>ANY</document-code>
       <document-type>Modification of a contract/concession during its term</document-type>
       <eforms-subtype>40</eforms-subtype>
-      <notice-description>Contract modification notice – concessions directive</notice-description>
+      <notice-description>Contract modification notice &#8211; concessions directive</notice-description>
    </row>
    <row rowpos="101">
       <form-element>F20_2014</form-element>
@@ -545,10 +544,10 @@
       <notice-type/>
       <directive>2014/24/EU</directive>
       <legal-basis/>
-      <document-code>K</document-code>
+      <document-code>ANY</document-code>
       <document-type>Modification of a contract/concession during its term</document-type>
       <eforms-subtype>38</eforms-subtype>
-      <notice-description>Contract modification notice – general directive</notice-description>
+      <notice-description>Contract modification notice &#8211; general directive</notice-description>
    </row>
    <row rowpos="102">
       <form-element>F20_2014</form-element>
@@ -556,10 +555,10 @@
       <notice-type/>
       <directive>2014/25/EU</directive>
       <legal-basis/>
-      <document-code>K</document-code>
+      <document-code>ANY</document-code>
       <document-type>Modification of a contract/concession during its term</document-type>
       <eforms-subtype>39</eforms-subtype>
-      <notice-description>Contract modification notice – sectoral directive</notice-description>
+      <notice-description>Contract modification notice &#8211; sectoral directive</notice-description>
    </row>
    <row rowpos="103">
       <form-element>F21_2014</form-element>
@@ -567,10 +566,10 @@
       <notice-type>AWARD_CONTRACT</notice-type>
       <directive>ANY</directive>
       <legal-basis>ANY</legal-basis>
-      <document-code>7</document-code>
+      <document-code>ANY</document-code>
       <document-type>Contract award notice</document-type>
       <eforms-subtype>33</eforms-subtype>
-      <notice-description>Contract award notice – general directive, light regime</notice-description>
+      <notice-description>Contract award notice &#8211; general directive, light regime</notice-description>
    </row>
    <row rowpos="105">
       <form-element>F21_2014</form-element>
@@ -578,10 +577,10 @@
       <notice-type>CONTRACT</notice-type>
       <directive>ANY</directive>
       <legal-basis>ANY</legal-basis>
-      <document-code>3</document-code>
+      <document-code>ANY</document-code>
       <document-type>Contract notice</document-type>
       <eforms-subtype>20</eforms-subtype>
-      <notice-description>Contract notice – general directive, light regime</notice-description>
+      <notice-description>Contract notice &#8211; general directive, light regime</notice-description>
    </row>
    <row rowpos="107">
       <form-element>F21_2014</form-element>
@@ -589,7 +588,7 @@
       <notice-type>PRI_CALL_COMPETITION</notice-type>
       <directive>ANY</directive>
       <legal-basis>ANY</legal-basis>
-      <document-code>A</document-code>
+      <document-code>ANY</document-code>
       <document-type>Prior information notice with call for competition</document-type>
       <eforms-subtype>12</eforms-subtype>
       <notice-description>Prior information notice used as a call for competition - general directive, light regime</notice-description>
@@ -600,10 +599,10 @@
       <notice-type>PRI_ONLY</notice-type>
       <directive>ANY</directive>
       <legal-basis>ANY</legal-basis>
-      <document-code>0</document-code>
+      <document-code>ANY</document-code>
       <document-type>Prior information notice without call for competition</document-type>
       <eforms-subtype>4</eforms-subtype>
-      <notice-description>Prior information notice used only for information – general directive</notice-description>
+      <notice-description>Prior information notice used only for information &#8211; general directive</notice-description>
    </row>
    <row rowpos="111">
       <form-element>F22_2014</form-element>
@@ -614,7 +613,7 @@
       <document-code>7</document-code>
       <document-type>Contract award notice</document-type>
       <eforms-subtype>34</eforms-subtype>
-      <notice-description>Contract award notice – sectoral directive, light regime</notice-description>
+      <notice-description>Contract award notice &#8211; sectoral directive, light regime</notice-description>
    </row>
    <row rowpos="113">
       <form-element>F22_2014</form-element>
@@ -625,7 +624,7 @@
       <document-code>3</document-code>
       <document-type>Contract notice</document-type>
       <eforms-subtype>21</eforms-subtype>
-      <notice-description>Contract notice – sectoral directive, light regime</notice-description>
+      <notice-description>Contract notice &#8211; sectoral directive, light regime</notice-description>
    </row>
    <row rowpos="115">
       <form-element>F22_2014</form-element>
@@ -647,7 +646,7 @@
       <document-code>P</document-code>
       <document-type>Periodic indicative notice without call for competition</document-type>
       <eforms-subtype>5</eforms-subtype>
-      <notice-description>Periodic indicative notice used only for information – sectoral directive</notice-description>
+      <notice-description>Periodic indicative notice used only for information &#8211; sectoral directive</notice-description>
    </row>
    <row rowpos="119">
       <form-element>F22_2014</form-element>
@@ -658,7 +657,7 @@
       <document-code>O</document-code>
       <document-type>Qualification system with call for competition</document-type>
       <eforms-subtype>15</eforms-subtype>
-      <notice-description>Notice on the existence of a qualification system — sectoral directive</notice-description>
+      <notice-description>Notice on the existence of a qualification system &#8212; sectoral directive</notice-description>
    </row>
    <row rowpos="120">
       <form-element>F22_2014</form-element>
@@ -669,7 +668,7 @@
       <document-code>Q</document-code>
       <document-type>Qualification system without call for competition</document-type>
       <eforms-subtype>15</eforms-subtype>
-      <notice-description>Notice on the existence of a qualification system — sectoral directive</notice-description>
+      <notice-description>Notice on the existence of a qualification system &#8212; sectoral directive</notice-description>
    </row>
    <row rowpos="121">
       <form-element>F23_2014</form-element>
@@ -677,10 +676,10 @@
       <notice-type>CONCESSION_AWARD_CONTRACT</notice-type>
       <directive>ANY</directive>
       <legal-basis>ANY</legal-basis>
-      <document-code>J</document-code>
+      <document-code>ANY</document-code>
       <document-type>Concession award notice</document-type>
       <eforms-subtype>35</eforms-subtype>
-      <notice-description>Concession award notice – concessions directive, light regime</notice-description>
+      <notice-description>Concession award notice &#8211; concessions directive, light regime</notice-description>
    </row>
    <row rowpos="123">
       <form-element>F23_2014</form-element>
@@ -688,10 +687,10 @@
       <notice-type>PRI</notice-type>
       <directive>ANY</directive>
       <legal-basis>ANY</legal-basis>
-      <document-code>H</document-code>
+      <document-code>ANY</document-code>
       <document-type>Services concession</document-type>
       <eforms-subtype>14</eforms-subtype>
-      <notice-description>Prior information notice used as a call for competition — concessions directive, light regime</notice-description>
+      <notice-description>Prior information notice used as a call for competition &#8212; concessions directive, light regime</notice-description>
    </row>
    <row rowpos="125">
       <form-element>F24_2014</form-element>
@@ -702,7 +701,7 @@
       <document-code>C</document-code>
       <document-type>Works concession</document-type>
       <eforms-subtype>19</eforms-subtype>
-      <notice-description>Concession notice – concessions directive, standard regime</notice-description>
+      <notice-description>Concession notice &#8211; concessions directive, standard regime</notice-description>
    </row>
    <row rowpos="126">
       <form-element>F24_2014</form-element>
@@ -713,7 +712,7 @@
       <document-code>H</document-code>
       <document-type>Services concession</document-type>
       <eforms-subtype>19</eforms-subtype>
-      <notice-description>Concession notice – concessions directive, standard regime</notice-description>
+      <notice-description>Concession notice &#8211; concessions directive, standard regime</notice-description>
    </row>
    <row rowpos="127">
       <form-element>F24_2014</form-element>
@@ -735,7 +734,7 @@
       <document-code>H</document-code>
       <document-type>Services concession</document-type>
       <eforms-subtype>19</eforms-subtype>
-      <notice-description>Concession notice – concessions directive, standard regime</notice-description>
+      <notice-description>Concession notice &#8211; concessions directive, standard regime</notice-description>
    </row>
    <row rowpos="130">
       <form-element>F25_2014</form-element>
@@ -746,7 +745,7 @@
       <document-code>J</document-code>
       <document-type>Concession award notice</document-type>
       <eforms-subtype>32</eforms-subtype>
-      <notice-description>Concession award notice – concession directive, standard regime</notice-description>
+      <notice-description>Concession award notice &#8211; concession directive, standard regime</notice-description>
    </row>
    <row rowpos="132">
       <form-element>PRIOR_INFORMATION</form-element>
@@ -966,7 +965,7 @@
       <document-code>0</document-code>
       <document-type>Prior information notice without call for competition</document-type>
       <eforms-subtype>6</eforms-subtype>
-      <notice-description>Prior information notice used only for information – defence directive</notice-description>
+      <notice-description>Prior information notice used only for information &#8211; defence directive</notice-description>
    </row>
    <row rowpos="159">
       <form-element>CONTRACT_DEFENCE</form-element>
@@ -977,7 +976,7 @@
       <document-code>3</document-code>
       <document-type>Contract notice</document-type>
       <eforms-subtype>18</eforms-subtype>
-      <notice-description>Contract notice – defence directive, standard regime </notice-description>
+      <notice-description>Contract notice &#8211; defence directive, standard regime </notice-description>
    </row>
    <row rowpos="160">
       <form-element>CONTRACT_AWARD_DEFENCE</form-element>
@@ -988,7 +987,7 @@
       <document-code>7</document-code>
       <document-type>Contract award notice</document-type>
       <eforms-subtype>31</eforms-subtype>
-      <notice-description>Contract award notice – defence directive, standard regime</notice-description>
+      <notice-description>Contract award notice &#8211; defence directive, standard regime</notice-description>
    </row>
    <row rowpos="161">
       <form-element>CONTRACT_CONCESSIONAIRE_DEFENCE</form-element>
@@ -999,7 +998,7 @@
       <document-code>F</document-code>
       <document-type>Subcontract notice (in the fields of defence and security)</document-type>
       <eforms-subtype>22</eforms-subtype>
-      <notice-description>Subcontract notice – defence directive</notice-description>
+      <notice-description>Subcontract notice &#8211; defence directive</notice-description>
    </row>
    <row rowpos="162">
       <form-element>PRIOR_INFORMATION_MOVE</form-element>
@@ -1097,7 +1096,7 @@
       <legal-basis>ANY</legal-basis>
       <document-code>2</document-code>
       <document-type>Additional information</document-type>
-      <eforms-subtype/>
+       
       <notice-description/>
    </row>
    <row rowpos="171">
@@ -1186,6 +1185,432 @@
       <document-code>S</document-code>
       <document-type>European company</document-type>
       <eforms-subtype/>
+      <notice-description/>
+   </row>
+
+   <!--Support for national forms -->
+   <row rowpos="801">
+      <form-element>F52_2014</form-element>
+      <form-number>F52</form-number>
+      <notice-type/>
+      <directive>ANY</directive>
+      <legal-basis>ANY</legal-basis>
+      <document-code>ANY</document-code>
+      <document-type>Contract notice</document-type>
+      <eforms-subtype>16</eforms-subtype>
+      <notice-description>Nasjonal kunngjøring konkurranse</notice-description>
+   </row>  
+   <row rowpos="802">
+      <form-element>F102_2014</form-element>
+      <form-number>F102</form-number>
+      <notice-type>UTILITIES</notice-type>
+      <directive>ANY</directive>
+      <legal-basis>ANY</legal-basis>
+      <document-code>ANY</document-code>
+      <document-type>ANY</document-type>
+      <eforms-subtype>17</eforms-subtype>
+      <notice-description/>
+   </row>
+   <row rowpos="803">
+      <form-element>F102_2014</form-element>
+      <form-number>F102</form-number>
+      <notice-type>CLASSIC</notice-type>
+      <directive>ANY</directive>
+      <legal-basis>ANY</legal-basis>
+      <document-code>ANY</document-code>
+      <document-type>ANY</document-type>
+      <eforms-subtype>16</eforms-subtype>
+      <notice-description/>
+   </row>
+
+   <row rowpos="804">
+      <form-element>F65_2014</form-element>
+      <form-number>F65</form-number>
+      <notice-type>INTENTION</notice-type>
+      <directive>ANY</directive>
+      <legal-basis>ANY</legal-basis>
+      <document-code>ANY</document-code>
+      <document-type>ANY</document-type>
+      <eforms-subtype>4</eforms-subtype>
+      <notice-description/>
+   </row>
+
+   <row rowpos="805">
+      <form-element>F65_2014</form-element>
+      <form-number>F65</form-number>
+      <notice-type>AWARD</notice-type>
+      <directive>ANY</directive>
+      <legal-basis>ANY</legal-basis>
+      <document-code>ANY</document-code>
+      <document-type>ANY</document-type>
+      <eforms-subtype>29</eforms-subtype>
+      <notice-description/>
+   </row>
+
+      <!-- DFO; jukserader. catchall-->
+
+   <row rowpos="901">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_transformable_ok  -->
+      <!-- possible_matchable_mappingrow_ids ['16', '18', '901']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['16'] -->
+      <form-element>F02_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>16</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="902">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_transformable_ok  -->
+      <!-- possible_matchable_mappingrow_ids ['35', '36']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['17'] -->
+      <form-element>F05_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>17</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="903">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_transformable_ok  -->
+      <!-- possible_matchable_mappingrow_ids ['125', '126', '127', '129']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['19'] -->
+      <form-element>F24_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>19</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="904">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_transformable_ok  -->
+      <!-- possible_matchable_mappingrow_ids ['41', '43']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['15'] -->
+      <form-element>F07_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>15</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="905">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
+      <!-- possible_matchable_mappingrow_ids ['24']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['29'] -->
+      <form-element>F03_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>29</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="906">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
+      <!-- possible_matchable_mappingrow_ids ['29', '31', '33']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['8', '11', '5'] -->
+      <form-element>F04_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>8</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="907">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
+      <!-- possible_matchable_mappingrow_ids ['82', '83', '84', '85', '86', '87', '88', '89']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['28', '26', '27', '25'] -->
+      <form-element>F15_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>28</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="908">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
+      <!-- possible_matchable_mappingrow_ids ['2', '6', '11']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['7', '4', '10'] -->
+      <form-element>F01_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>7</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="909">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
+      <!-- possible_matchable_mappingrow_ids ['39']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['30'] -->
+      <form-element>F06_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>30</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="910">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
+      <!-- possible_matchable_mappingrow_ids ['103', '105', '107', '109']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['33', '20', '4', '12'] -->
+      <form-element>F21_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>33</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="911">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
+      <!-- possible_matchable_mappingrow_ids ['160']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['31'] -->
+      <form-element>CONTRACT_AWARD_DEFENCE</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>31</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="912">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
+      <!-- possible_matchable_mappingrow_ids ['111', '113', '115', '117', '119', '120']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['13', '21', '5', '34', '15'] -->
+      <form-element>F22_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>13</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="913">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
+      <!-- possible_matchable_mappingrow_ids ['51', '52', '53', '54']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['24', '23'] -->
+      <form-element>F12_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>24</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="914">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
+      <!-- possible_matchable_mappingrow_ids ['159']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['18'] -->
+      <form-element>CONTRACT_DEFENCE</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>18</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="915">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
+      <!-- possible_matchable_mappingrow_ids ['121', '123']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['35', '14'] -->
+      <form-element>F23_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>35</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="916">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
+      <!-- possible_matchable_mappingrow_ids ['90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100', '101', '102']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['40', '38', 'MOVE', '39'] -->
+      <form-element>F20_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>40</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="917">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
+      <!-- possible_matchable_mappingrow_ids ['45', '46', '47', '48', '49', '50']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['3', '2', '1'] -->
+      <form-element>F08_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>3</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="918">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
+      <!-- possible_matchable_mappingrow_ids ['130']  -->
+      <!-- possible_matching_eforms_subtype_nrs ['32'] -->
+      <form-element>F25_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>32</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="919">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_no_mapping_for_formname  -->
+      <!-- possible_matchable_mappingrow_ids []  -->
+      <!-- possible_matching_eforms_subtype_nrs [] -->
+      <form-element>F102_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype/>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="920">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_no_mapping_for_formname  -->
+      <!-- possible_matchable_mappingrow_ids ['59', '60']  -->
+      <!-- possible_matching_eforms_subtype_nrs [] -->
+      <form-element>F14_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype>99</eforms-subtype>  <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="921">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_no_mapping_for_formname  -->
+      <!-- possible_matchable_mappingrow_ids []  -->
+      <!-- possible_matching_eforms_subtype_nrs [] -->
+      <form-element>F52_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype/>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row>
+
+ 
+   <row rowpos="922">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_no_mapping_for_formname  -->
+      <!-- possible_matchable_mappingrow_ids []  -->
+      <!-- possible_matching_eforms_subtype_nrs [] -->
+      <form-element>F65_2014</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype/>   <!-- &#248;nket returverdi for eformssubtype -->
+      <notice-description/>
+   </row> 
+   <row rowpos="923">   <!--  nummer serie langt fra de andre -->
+      <!-- grouping: files_FORMNAME_BASED_no_mapping_for_formname  -->
+      <!-- possible_matchable_mappingrow_ids []  -->
+      <!-- possible_matching_eforms_subtype_nrs [] -->
+      <form-element>ADDITIONAL_INFORMATION_CORRIGENDUM</form-element> <!-- formname for de formtyper vi &#248;nsker &#229; jukse p&#229;...dvs treffe -->
+      <form-number>ANY</form-number>  <!-- jukseverdi -->
+      <notice-type>ANY</notice-type> <!-- jukseverdi -->
+      <directive>ANY</directive> <!-- jukseverdi -->
+      <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
+      <document-code>ANY</document-code> <!-- jukseverdi -->
+      <document-type>ANY</document-type> <!-- jukseverdi -->
+      <eforms-subtype/>   <!-- &#248;nket returverdi for eformssubtype -->
       <notice-description/>
    </row>
 </mapping>
