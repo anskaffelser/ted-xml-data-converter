@@ -1162,8 +1162,8 @@
 		<xsl:variable name="nuts-mapping-file" select="fn:document('location-nuts-mapping.xml')"/>
 
 		<xsl:variable name="mappedNuts" as="item()*">
-			<xsl:if test="count(//LOCATION) &gt; 0">
-				<xsl:for-each select="//LOCATION">			
+			<xsl:if test="count(//OBJECT_CONTRACT/LOCATION | //OBJECT_CONTRACT/OBJECT_DESCR/LOCATION) &gt; 0">
+				<xsl:for-each select="//OBJECT_CONTRACT/LOCATION | //OBJECT_CONTRACT/OBJECT_DESCR/LOCATION">			
 					<xsl:variable name="locationCode" select="@code"/>
 					<xsl:variable name="mapped" select="$nuts-mapping-file/root/row[location eq $locationCode]/nuts"/>
 				
@@ -1179,16 +1179,26 @@
 			<xsl:choose>
 				<xsl:when test="fn:not(fn:normalize-space(*:MAIN_SITE)) and fn:empty($valid-nuts)">
 					<!-- No valid MAIN_SITE and no valid NUTS codes -->
-					<cac:RealizedLocation>
-						<cac:Address>
-							<cbc:Region>anyw</cbc:Region>
+					<xsl:choose>
+						<xsl:when test="count($mappedNuts) gt 0">
 							<xsl:for-each select="fn:distinct-values($mappedNuts)">
-								<cbc:CountrySubentityCode listName="nuts">
-									<xsl:value-of select="."/>
-								</cbc:CountrySubentityCode>
-							</xsl:for-each>
-						</cac:Address>
-					</cac:RealizedLocation>
+								<cac:RealizedLocation>
+									<cac:Address>
+										<cbc:CountrySubentityCode listName="nuts">
+											<xsl:value-of select="."/>
+										</cbc:CountrySubentityCode>
+									</cac:Address>
+								</cac:RealizedLocation>							
+							</xsl:for-each>							
+						</xsl:when>
+						<xsl:otherwise>
+							<cac:RealizedLocation>
+								<cac:Address>
+									<cbc:Region>anyw</cbc:Region>
+								</cac:Address>
+							</cac:RealizedLocation>							
+						</xsl:otherwise>
+					</xsl:choose>					
 				</xsl:when>
 				<!-- Valid MAIN_SITE and no valid NUTS codes -->
 				<xsl:when test="fn:normalize-space(*:MAIN_SITE) and fn:empty($valid-nuts)">
