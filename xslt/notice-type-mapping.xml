@@ -1188,7 +1188,7 @@
       <notice-description/>
    </row>
 
-   <!--Support for national forms -->
+   <!-- Endringar av Rune -->
    <row rowpos="801">
       <form-element>F52_2014</form-element>
       <form-number>F52</form-number>
@@ -1249,7 +1249,7 @@
 
       <!-- DFO; jukserader. catchall-->
 
-   <row rowpos="901">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="901">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_transformable_ok  -->
       <!-- possible_matchable_mappingrow_ids ['16', '18', '901']  -->
       <!-- possible_matching_eforms_subtype_nrs ['16'] -->
@@ -1265,7 +1265,7 @@
    </row>
 
  
-   <row rowpos="902">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="902">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_transformable_ok  -->
       <!-- possible_matchable_mappingrow_ids ['35', '36']  -->
       <!-- possible_matching_eforms_subtype_nrs ['17'] -->
@@ -1281,7 +1281,7 @@
    </row>
 
  
-   <row rowpos="903">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="903">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_transformable_ok  -->
       <!-- possible_matchable_mappingrow_ids ['125', '126', '127', '129']  -->
       <!-- possible_matching_eforms_subtype_nrs ['19'] -->
@@ -1297,7 +1297,7 @@
    </row>
 
  
-   <row rowpos="904">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="904">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_transformable_ok  -->
       <!-- possible_matchable_mappingrow_ids ['41', '43']  -->
       <!-- possible_matching_eforms_subtype_nrs ['15'] -->
@@ -1313,7 +1313,7 @@
    </row>
 
  
-   <row rowpos="905">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="905">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
       <!-- possible_matchable_mappingrow_ids ['24']  -->
       <!-- possible_matching_eforms_subtype_nrs ['29'] -->
@@ -1329,7 +1329,7 @@
    </row>
 
  
-   <row rowpos="906">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="906">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
       <!-- possible_matchable_mappingrow_ids ['29', '31', '33']  -->
       <!-- possible_matching_eforms_subtype_nrs ['8', '11', '5'] -->
@@ -1345,7 +1345,7 @@
    </row>
 
  
-   <row rowpos="907">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="907">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
       <!-- possible_matchable_mappingrow_ids ['82', '83', '84', '85', '86', '87', '88', '89']  -->
       <!-- possible_matching_eforms_subtype_nrs ['28', '26', '27', '25'] -->
@@ -1361,7 +1361,7 @@
    </row>
 
  
-   <row rowpos="908">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="908">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
       <!-- possible_matchable_mappingrow_ids ['2', '6', '11']  -->
       <!-- possible_matching_eforms_subtype_nrs ['7', '4', '10'] -->
@@ -1377,7 +1377,7 @@
    </row>
 
  
-   <row rowpos="909">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="909">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
       <!-- possible_matchable_mappingrow_ids ['39']  -->
       <!-- possible_matching_eforms_subtype_nrs ['30'] -->
@@ -1393,7 +1393,7 @@
    </row>
 
  
-   <row rowpos="910">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="910">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
       <!-- possible_matchable_mappingrow_ids ['103', '105', '107', '109']  -->
       <!-- possible_matching_eforms_subtype_nrs ['33', '20', '4', '12'] -->
@@ -1409,7 +1409,7 @@
    </row>
 
  
-   <row rowpos="911">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="911">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
       <!-- possible_matchable_mappingrow_ids ['160']  -->
       <!-- possible_matching_eforms_subtype_nrs ['31'] -->
@@ -1425,7 +1425,7 @@
    </row>
 
  
-   <row rowpos="912">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="912">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
       <!-- possible_matchable_mappingrow_ids ['111', '113', '115', '117', '119', '120']  -->
       <!-- possible_matching_eforms_subtype_nrs ['13', '21', '5', '34', '15'] -->
@@ -1441,7 +1441,7 @@
    </row>
 
  
-   <row rowpos="913">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="913">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
       <!-- possible_matchable_mappingrow_ids ['51', '52', '53', '54']  -->
       <!-- possible_matching_eforms_subtype_nrs ['24', '23'] -->
@@ -1457,7 +1457,7 @@
    </row>
 
  
-   <row rowpos="914">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="914">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
       <!-- possible_matchable_mappingrow_ids ['159']  -->
       <!-- possible_matching_eforms_subtype_nrs ['18'] -->
@@ -1473,7 +1473,7 @@
    </row>
 
  
-   <row rowpos="915">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="915">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
       <!-- possible_matchable_mappingrow_ids ['121', '123']  -->
       <!-- possible_matching_eforms_subtype_nrs ['35', '14'] -->
@@ -1489,7 +1489,7 @@
    </row>
 
  
-   <row rowpos="916">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="916">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
       <!-- possible_matchable_mappingrow_ids ['90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100', '101', '102']  -->
       <!-- possible_matching_eforms_subtype_nrs ['40', '38', 'MOVE', '39'] -->
@@ -1505,7 +1505,7 @@
    </row>
 
  
-   <row rowpos="917">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="917">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
       <!-- possible_matchable_mappingrow_ids ['45', '46', '47', '48', '49', '50']  -->
       <!-- possible_matching_eforms_subtype_nrs ['3', '2', '1'] -->
@@ -1521,7 +1521,7 @@
    </row>
 
  
-   <row rowpos="918">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="918">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_MAYBE_transformable_all  -->
       <!-- possible_matchable_mappingrow_ids ['130']  -->
       <!-- possible_matching_eforms_subtype_nrs ['32'] -->
@@ -1537,7 +1537,7 @@
    </row>
 
  
-   <row rowpos="919">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="919">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_no_mapping_for_formname  -->
       <!-- possible_matchable_mappingrow_ids []  -->
       <!-- possible_matching_eforms_subtype_nrs [] -->
@@ -1548,12 +1548,12 @@
       <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
       <document-code>ANY</document-code> <!-- jukseverdi -->
       <document-type>ANY</document-type> <!-- jukseverdi -->
-      <eforms-subtype/>   <!-- &#248;nket returverdi for eformssubtype -->
+      <eforms-subtype>99</eforms-subtype>  <!-- &#248;nket returverdi for eformssubtype -->
       <notice-description/>
    </row>
 
  
-   <row rowpos="920">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="920">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_no_mapping_for_formname  -->
       <!-- possible_matchable_mappingrow_ids ['59', '60']  -->
       <!-- possible_matching_eforms_subtype_nrs [] -->
@@ -1569,7 +1569,7 @@
    </row>
 
  
-   <row rowpos="921">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="921">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_no_mapping_for_formname  -->
       <!-- possible_matchable_mappingrow_ids []  -->
       <!-- possible_matching_eforms_subtype_nrs [] -->
@@ -1580,12 +1580,12 @@
       <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
       <document-code>ANY</document-code> <!-- jukseverdi -->
       <document-type>ANY</document-type> <!-- jukseverdi -->
-      <eforms-subtype/>   <!-- &#248;nket returverdi for eformssubtype -->
+      <eforms-subtype>99</eforms-subtype>  <!-- &#248;nket returverdi for eformssubtype -->
       <notice-description/>
    </row>
 
  
-   <row rowpos="922">   <!--  nummer serie langt fra de andre -->
+   <row rowpos="922">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_no_mapping_for_formname  -->
       <!-- possible_matchable_mappingrow_ids []  -->
       <!-- possible_matching_eforms_subtype_nrs [] -->
@@ -1596,10 +1596,12 @@
       <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
       <document-code>ANY</document-code> <!-- jukseverdi -->
       <document-type>ANY</document-type> <!-- jukseverdi -->
-      <eforms-subtype/>   <!-- &#248;nket returverdi for eformssubtype -->
+      <eforms-subtype>99</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
       <notice-description/>
-   </row> 
-   <row rowpos="923">   <!--  nummer serie langt fra de andre -->
+   </row>
+
+ 
+   <row rowpos="923">   <!--  nummer sereie langt fra de andre -->
       <!-- grouping: files_FORMNAME_BASED_no_mapping_for_formname  -->
       <!-- possible_matchable_mappingrow_ids []  -->
       <!-- possible_matching_eforms_subtype_nrs [] -->
@@ -1610,7 +1612,13 @@
       <legal-basis>ANY</legal-basis> <!-- jukseverdi -->
       <document-code>ANY</document-code> <!-- jukseverdi -->
       <document-type>ANY</document-type> <!-- jukseverdi -->
-      <eforms-subtype/>   <!-- &#248;nket returverdi for eformssubtype -->
+      <eforms-subtype>99</eforms-subtype>   <!-- &#248;nket returverdi for eformssubtype -->
       <notice-description/>
    </row>
+
+
+
+
+
+
 </mapping>

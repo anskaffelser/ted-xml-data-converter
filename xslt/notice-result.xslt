@@ -31,6 +31,21 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 				</contractor-group>
 			</ted-contractor-group>
 		</xsl:for-each>
+		<xsl:if test="$ted-form-main-element/*:AWARD_CONTRACT/*:AWARDED_CONTRACT/NO_AWARDED_TO_GROUP">
+			<xsl:for-each select="$ted-form-main-element/*:AWARD_CONTRACT/*:AWARDED_CONTRACT">
+				<ted-contractor-group>
+					<xsl:variable name="path" select="functx:path-to-node-with-pos(.)"/>
+					<path><xsl:value-of select="$path"/></path>
+					<contractor-group>
+						<xsl:for-each select="*:CONTRACTOR">
+							<xsl:variable name="contractor-path" select="functx:path-to-node-with-pos(.)"/>
+							<xsl:variable name="orgid" select="$ted-addresses-unique-with-id//ted-org/path[fn:starts-with(.,$contractor-path)]/fn:string(../orgid)"/>
+							<ted-contractor><xsl:value-of select="$orgid"/></ted-contractor>
+						</xsl:for-each>
+					</contractor-group>
+				</ted-contractor-group>
+			</xsl:for-each>			
+		</xsl:if>
 	</ted-contractor-groups>
 </xsl:variable>
 

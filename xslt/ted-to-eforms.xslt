@@ -91,7 +91,7 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 
 	<xsl:variable name="message">WARNING: TED date elements have no time zone associated. For all dates in this notice, the time zone is assumed to be CET, i.e. UTC+01:00 </xsl:variable>
 	<xsl:call-template name="report-warning"><xsl:with-param name="message" select="$message"/></xsl:call-template>
-
+	
 	<!-- root element of output XML -->
 	<xsl:element name="{$eforms-element-name}" namespace="{$eforms-xmlns}">
 		<xsl:namespace name="cac" select="'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'"/>
@@ -111,7 +111,22 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 		<!-- The ContractAwardNotice schema requires cac:TenderResult/cbc:AwardDate -->
 		<xsl:if test="$eforms-document-type eq 'CAN'">
 			<cac:TenderResult>
-				<cbc:AwardDate><xsl:text>2000-01-01Z</xsl:text></cbc:AwardDate>
+				<cbc:AwardDate>
+					<!--orig code 
+					<xsl:text>2000-01-01Z</xsl:text>
+					end orig code-->
+					<!-- changed dfo -->
+					<xsl:choose>						
+				        <xsl:when test="//DATE_CONCLUSION_CONTRACT">
+				            <xsl:value-of select="//DATE_CONCLUSION_CONTRACT"/>
+				        </xsl:when>
+				        <xsl:otherwise>
+				            <xsl:text>2000-01-01Z</xsl:text>								
+				        </xsl:otherwise>
+				    </xsl:choose>
+				    <!--end changed dfo -->
+
+				</cbc:AwardDate>
 			</cac:TenderResult>
 		</xsl:if>
 	</xsl:element>
@@ -139,7 +154,21 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 					<!-- Notice SubType (OPP-070): eForms documentation cardinality (Procedure) = 1 -->
 					<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'Notice SubType (OPP-070)'"/></xsl:call-template>
 					<efac:NoticeSubType>
+						<!-- orig lines
 						<cbc:SubTypeCode listName="notice-subtype"><xsl:value-of select="$eforms-notice-subtype"/></cbc:SubTypeCode>
+					    end orig lines-->
+
+					    <!-- start DFO juks .. hardcodet N in front, so F52 gets notice subtype N16 insetad of 16
+						Dei stikkprøvane eg har gjort så er alle F52 nasjonal kunngjøring, og om det stemmer så skal alle F52 bli N16
+						https://www.doffin.no/Notice/Details/2023-369830
+						https://www.doffin.no/Notice/Details/2023-335996
+						-->
+					    <cbc:SubTypeCode listName="notice-subtype">
+					    	<xsl:if test="$ted-form-name eq 'F52'">N</xsl:if>
+					    	<xsl:if test="$ted-form-name eq 'F65'">N</xsl:if>
+							<xsl:value-of select="$eforms-notice-subtype"/>
+						</cbc:SubTypeCode>
+					    <!-- end DFO juks -->
 					</efac:NoticeSubType>
 					<xsl:call-template name="organizations"/>
 					<xsl:call-template name="publication"/>
@@ -177,10 +206,30 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 		<xsl:variable name="message"><xsl:text>WARNING: Invalid SDK version supplied as a parameter. Using default value "</xsl:text><xsl:value-of select="$sdk-version-default"/><xsl:text>"</xsl:text></xsl:variable>
 		<xsl:call-template name="report-warning"><xsl:with-param name="message" select="$message"/></xsl:call-template>
 	</xsl:if>
-	<cbc:CustomizationID><xsl:value-of select="$sdk-version-value"/></cbc:CustomizationID>
+	<cbc:CustomizationID>
+		<xsl:value-of select="$sdk-version-value"/>
+
+		<!-- added dfo -->
+		<xsl:choose>
+		    <xsl:when test="$ted-form-name eq 'F52'">#urn:fdc:anskaffelser.no:2023:eforms:national</xsl:when>
+		    <xsl:when test="$ted-form-name eq 'F65'">#urn:fdc:anskaffelser.no:2023:eforms:national</xsl:when>
+		    <xsl:otherwise>#urn:fdc:anskaffelser.no:2023:eforms:eu</xsl:otherwise>
+		</xsl:choose>
+
+		<!-- edn added dfo -->
+
+
+
+
+	</cbc:CustomizationID>
 	<!-- Notice Identifier (BT-701): eForms documentation cardinality (Procedure) = 1 | Mandatory for ALL subtypes -->
 	<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'Notice Identifier (BT-701)'"/></xsl:call-template>
 	<cbc:ID schemeName="notice-id"><xsl:value-of select="$notice-identifier"/></cbc:ID>
+	<!-- added dfo -->
+	<xsl:if test="$eforms-notice-subtype = '99'">
+		<cbc:URI>https://classic.doffin.no/Notice/Details/<xsl:value-of select="$notice-identifier"/></cbc:URI>
+	</xsl:if>
+	<!-- end added dfo  -->
 	<xsl:if test="not($eforms-notice-subtype = ('1', '2', '3', '4', '5', '6', '7', '8', '9'))">
 		<!-- Procedure Identifier (BT-04): eForms documentation cardinality (Procedure) = * | Forbidden for PIN subtypes 1-9, E1 and E2; Mandatory for other subtypes -->
 		<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'Procedure Identifier (BT-04)'"/></xsl:call-template>
@@ -258,7 +307,12 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 		<!-- OJEU Publication Date (OPP-012): eForms documentation cardinality (Procedure) = ? -->
 		<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'OJEU Publication Date (OPP-012)'"/></xsl:call-template>
 		<!-- TBD: hard-coded for now -->
-		<efbc:PublicationDate>2023-03-14+01:00</efbc:PublicationDate>
+		<efbc:PublicationDate>
+			<!-- 2023-03-14+01:00 -->
+			<!--added dfo -->
+			<xsl:value-of select="//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE"/><xsl:text>+01:00</xsl:text>
+			<!-- end added dfo -->
+		</efbc:PublicationDate>
 	</efac:Publication>
 </xsl:template>
 

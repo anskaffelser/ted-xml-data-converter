@@ -11,6 +11,8 @@ xmlns:pin="urn:oasis:names:specification:ubl:schema:xsd:PriorInformationNotice-2
 xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
 xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1"
 xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+xmlns:uuid="http://www.uuid.org"
+xmlns:math="http://exslt.org/math"
 exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n2016-1 n2016 n2021 pin cn can ccts ext" >
 <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 
@@ -27,9 +29,15 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 
 <!-- external conversion parameters -->
 <!-- Value for BT-701 Notice Identifier -->
-<xsl:param name="notice-identifier" select="'f252f386-55ac-4fa8-9be4-9f950b9904c8'" as="xs:string"/>
+<!-- orig code 
+<xsl:param name="notice-identifier" select="tokenize(base-uri(.), '/')[last()]" as="xs:string"/>
+end orig code -->
+<!-- dfo change start -->
+<xsl:param name="notice-identifier" select="substring-before(tokenize(base-uri(.), '/')[last()], '.')" as="xs:string"/>
+<!-- dfo change end -->
+
 <!-- Value for BT-04 Procedure Identifier -->
-<xsl:param name="procedure-identifier" select="'aff2863e-b4cc-4e91-baba-b3b85f709117'" as="xs:string"/>
+<xsl:param name="procedure-identifier" select="uuid:get-uuid($ted-form-main-element)" as="xs:string"/>
 <!-- Value for SDK version -->
 <xsl:param name="sdk-version" select="$sdk-version-default" as="xs:string"/>
 
@@ -64,8 +72,22 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 <xsl:variable name="ted-form-name" select="$ted-form-main-element/fn:string(@FORM)"/><!-- F06 or 17 or T02 or ... -->
 <!-- Variable ted-form-element-xpath holds the XPath with positional predicates of the main form element -->
 <xsl:variable name="ted-form-element-xpath" select="functx:path-to-node-with-pos($ted-form-main-element)"/>
+
 <!-- Variable ted-form-notice-type holds the value of the @TYPE attribute of the NOTICE element -->
-<xsl:variable name="ted-form-notice-type" select="$ted-form-main-element/fn:string(*:NOTICE/@TYPE)"/><!-- '' or PRI_ONLY or AWARD_CONTRACT ... -->
+
+<!--orig code
+<xsl:variable name="ted-form-notice-type" select="$ted-form-main-element/fn:string(*:NOTICE/@TYPE)"/> end orig code --><!-- '' or PRI_ONLY or AWARD_CONTRACT ... -->
+<!-- dfo juks start -->
+<xsl:variable name="ted-form-notice-type">
+<xsl:choose>
+<xsl:when test="$ted-form-main-element/fn:string(*:NOTICE/@TYPE)"><xsl:value-of select="$ted-form-main-element/fn:string(*:NOTICE/@TYPE)"/></xsl:when>
+<xsl:otherwise><xsl:value-of select="$ted-form-main-element/fn:string(*:NOTICE/@SECTOR)"/></xsl:otherwise>
+</xsl:choose>
+</xsl:variable>
+
+<!-- dfo juks end -->
+
+
 <!-- Variable document-code holds the value of the @TYPE attribute of the NOTICE element -->
 <xsl:variable name="document-code" select="/*/*:CODED_DATA_SECTION/*:CODIF_DATA/*:TD_DOCUMENT_TYPE/fn:string(@CODE)"/><!-- 0 or 6 or A or H ... -->
 <!-- Variable ted-form-first-language holds the value of the @LG attribute of the first form element with @CATEGORY='ORIGINAL' -->
@@ -216,8 +238,11 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 	<xsl:param name="directive"/><!-- could be value 'ANY' -->
 	<xsl:param name="ted-form-document-code"/>
 	<xsl:variable name="notice-mapping-file" select="fn:document('notice-type-mapping.xml')"/>
+		
+	
 	<!-- get rows from notice-type-mapping.xml with values matching the given parameters -->
-	<xsl:variable name="mapping-row" select="$notice-mapping-file/mapping/row[form-element eq $ted-form-element][form-number eq $ted-form-name][notice-type eq $ted-form-notice-type][(legal-basis eq $legal-basis) or (legal-basis eq 'ANY')][(directive eq $directive) or (directive eq 'ANY')][(document-code eq $ted-form-document-code) or (document-code eq 'ANY')]"/>
+	<!-- dfo modified..add or eq ANY to sevral params  -->
+	<xsl:variable name="mapping-row" select="$notice-mapping-file/mapping/row[(form-element eq $ted-form-element) or (form-element eq 'ANY')][(form-number eq $ted-form-name) or (form-number eq 'ANY')][(notice-type eq $ted-form-notice-type) or (notice-type eq 'ANY')][(legal-basis eq $legal-basis) or (legal-basis eq 'ANY')][(directive eq $directive) or (directive eq 'ANY')][(document-code eq $ted-form-document-code) or (document-code eq 'ANY')][1]"/>
 	<!-- exit with an error if there is not exactly one matching row -->
 	<xsl:if test="fn:count($mapping-row) != 1">
 		<xsl:message terminate="yes">
@@ -414,4 +439,100 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 	</xsl:choose>
 </xsl:template>
 
+	<!-- Functions in the uuid: namespace are used to calculate a UUID The method used is a derived timestamp method, which 
+		is explained here: http://www.famkruithof.net/guid-uuid-timebased.html and here: http://www.ietf.org/rfc/rfc4122.txt -->
+	<!-- Returns the UUID -->
+	<xsl:function name="uuid:get-uuid" as="xs:string*">
+		<xsl:param name="node"/>
+		<xsl:variable name="ts" select="uuid:ts-to-hex(uuid:generate-timestamp($node))"/>
+		<xsl:value-of separator="-" select="             substring($ts, 8, 8),             substring($ts, 4, 4),             string-join((uuid:get-uuid-version(), substring($ts, 1, 3)), ''),             uuid:generate-clock-id(),             uuid:get-network-node()"/>
+	</xsl:function>
+	<!-- internal aux. fu with saxon, this creates a more-unique result with generate-id then when just using a variable containing 
+		a node -->
+	<xsl:function name="uuid:_get-node">
+		<xsl:comment/>
+	</xsl:function>
+	<!-- should return the next nr in sequence, but this can't be done in xslt. Instead, it returns a guaranteed unique number -->
+	<xsl:function name="uuid:next-nr" as="xs:integer">
+		<xsl:param name="node"/>
+		<xsl:sequence select="             xs:integer(replace(             generate-id($node), '\D', ''))"/>
+	</xsl:function>
+	<!-- internal fu for returning hex digits only -->
+	<xsl:function name="uuid:_hex-only" as="xs:string">
+		<xsl:param name="string"/>
+		<xsl:param name="count"/>
+		<xsl:sequence select="             substring(replace(             $string, '[^0-9a-fA-F]', '')             , 1, $count)"/>
+	</xsl:function>
+	<!-- may as well be defined as returning the same seq each time -->
+	<xsl:variable name="_clock" select="generate-id(uuid:_get-node())"/>
+	<xsl:function name="uuid:generate-clock-id" as="xs:string">
+		<xsl:sequence select="uuid:_hex-only($_clock, 4)"/>
+	</xsl:function>
+	<!-- returns the network node, this one is 'random', but must be the same within calls. The least-significant bit must be 
+		'1' when it is not a real MAC address (in this case it is set to '1') -->
+	<xsl:function name="uuid:get-network-node" as="xs:string">
+		<xsl:sequence select="uuid:_hex-only('09-17-3F-13-E4-C5', 12)"/>
+	</xsl:function>
+	<!-- returns version, for timestamp uuids, this is "1" -->
+	<xsl:function name="uuid:get-uuid-version" as="xs:string">
+		<xsl:sequence select="'1'"/>
+	</xsl:function>
+	<!-- Generates a timestamp of the amount of 100 nanosecond intervals from 15 October 1582, in UTC time. -->
+	<xsl:function name="uuid:generate-timestamp">
+		<xsl:param name="node"/>
+		<!-- date calculation automatically goes correct when you add the timezone information, in this case that is UTC. -->
+		<xsl:variable name="duration-from-1582" as="xs:dayTimeDuration">
+			<xsl:sequence select="                 current-dateTime() -                 xs:dateTime('1582-10-15T00:00:00.000Z')"/>
+		</xsl:variable>
+		<xsl:variable name="random-offset" as="xs:integer">
+			<xsl:sequence select="uuid:next-nr($node) mod 10000"/>
+		</xsl:variable>
+		<!-- do the math to get the 100 nano second intervals -->
+		<xsl:sequence select="             (days-from-duration($duration-from-1582) * 24 * 60 * 60 +             hours-from-duration($duration-from-1582) * 60 * 60 +             minutes-from-duration($duration-from-1582) * 60 +             seconds-from-duration($duration-from-1582)) * 1000             * 10000 + $random-offset"/>
+	</xsl:function>
+	<!-- simple non-generalized function to convert from timestamp to hex -->
+	<xsl:function name="uuid:ts-to-hex">
+		<xsl:param name="dec-val"/>
+		<xsl:value-of separator="" select="             for $i in 1 to 15             return (0 to 9, tokenize('A B C D E F', ' '))             [             $dec-val idiv             xs:integer(math:power(16, 15 - $i))             mod 16 + 1             ]"/>
+	</xsl:function>
+	<xsl:function name="math:power">
+		<xsl:param name="base"/>
+		<xsl:param name="power"/>
+		<xsl:choose>
+			<xsl:when test="$power &lt; 0 or contains(string($power), '.')">
+				<xsl:message terminate="yes">
+					
+					The XSLT template math:power doesn't support negative or
+					
+					fractional arguments.
+					
+				</xsl:message>
+				<xsl:text>NaN</xsl:text>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:call-template name="math:_power">
+					<xsl:with-param name="base" select="$base"/>
+					<xsl:with-param name="power" select="$power"/>
+					<xsl:with-param name="result" select="1"/>
+				</xsl:call-template>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	<xsl:template name="math:_power">
+		<xsl:param name="base"/>
+		<xsl:param name="power"/>
+		<xsl:param name="result"/>
+		<xsl:choose>
+			<xsl:when test="$power = 0">
+				<xsl:value-of select="$result"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:call-template name="math:_power">
+					<xsl:with-param name="base" select="$base"/>
+					<xsl:with-param name="power" select="$power - 1"/>
+					<xsl:with-param name="result" select="$result * $base"/>
+				</xsl:call-template>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
 </xsl:stylesheet>
