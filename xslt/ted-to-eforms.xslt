@@ -18,7 +18,7 @@ xmlns:pin="urn:oasis:names:specification:ubl:schema:xsd:PriorInformationNotice-2
 xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
 xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1"
 xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
-exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n2016-1 n2016 n2021 pin cn can ccts ext" >
+exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n2016-1 n2016 n2021 pin cn can ccts ext dfo" >
 <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 
 <xsl:include href="functions-and-data.xslt"/>
@@ -229,6 +229,9 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 	<!-- added dfo -->
 	<xsl:if test="$eforms-notice-subtype = '99'">
 		<cbc:URI>https://classic.doffin.no/Notice/Details/<xsl:value-of select="$notice-identifier"/></cbc:URI>
+		<xsl:if test="//COMPLEMENTARY_INFO/NO_DOC_EXT">
+			<dfo:Updates><xsl:value-of select="//COMPLEMENTARY_INFO/NO_DOC_EXT"></xsl:value-of></dfo:Updates>
+		</xsl:if>
 	</xsl:if>
 	<!-- end added dfo  -->
 	<xsl:if test="not($eforms-notice-subtype = ('1', '2', '3', '4', '5', '6', '7', '8', '9'))">
