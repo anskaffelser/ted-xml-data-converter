@@ -87,9 +87,9 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 	<!-- NOTE: all eForms dates and times should contain ISO-8601 format dates, i.e. expressed as UTC with offsets. -->
 	<!-- TED date elements have no time zone associated, and TED time elements have "local time". -->
 	<!-- Therefore for complete accuracy, a mapping of country codes to UTC timezone offsets would be required -->
-	<!-- In this initial conversion, no such mapping is used, and TED dates and times are assumed to be CET, i.e. UTC+01:00 -->
+	<!-- In this initial conversion, no such mapping is used, and TED dates and times are assumed to be CET, i.e. UTC -->
 
-	<xsl:variable name="message">WARNING: TED date elements have no time zone associated. For all dates in this notice, the time zone is assumed to be CET, i.e. UTC+01:00 </xsl:variable>
+	<xsl:variable name="message">WARNING: TED date elements have no time zone associated. For all dates in this notice, the time zone is assumed to be CET, i.e. UTC </xsl:variable>
 	<xsl:call-template name="report-warning"><xsl:with-param name="message" select="$message"/></xsl:call-template>
 	
 	<!-- root element of output XML -->
@@ -239,8 +239,8 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 	<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'Notice Dispatch Date (BT-05)'"/></xsl:call-template>
 	<xsl:choose>
 	  <xsl:when test="*:COMPLEMENTARY_INFO/*:DATE_DISPATCH_NOTICE">
-		<cbc:IssueDate><xsl:value-of select="*:COMPLEMENTARY_INFO/*:DATE_DISPATCH_NOTICE"/><xsl:text>+01:00</xsl:text></cbc:IssueDate>
-		<cbc:IssueTime>12:00:00+01:00</cbc:IssueTime>
+		<cbc:IssueDate><xsl:value-of select="*:COMPLEMENTARY_INFO/*:DATE_DISPATCH_NOTICE"/></cbc:IssueDate>
+		<cbc:IssueTime>12:00:00</cbc:IssueTime>
 	  </xsl:when>
 	  <xsl:otherwise>
 		<!-- WARNING: Notice Dispatch Date (BT-05) is Mandatory for all eForms subtypes, but no DATE_DISPATCH_NOTICE was found in TED XML. -->
@@ -257,7 +257,7 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 	<xsl:if test="$eforms-notice-subtype = ('4', '5', '6', '7', '8', '9')">
 		<xsl:choose>
 			<xsl:when test="*:OBJECT_CONTRACT/*:DATE_PUBLICATION_NOTICE">
-				<cbc:PlannedDate><xsl:value-of select="*:OBJECT_CONTRACT/*:DATE_PUBLICATION_NOTICE"/><xsl:text>+01:00</xsl:text></cbc:PlannedDate>
+				<cbc:PlannedDate><xsl:value-of select="*:OBJECT_CONTRACT/*:DATE_PUBLICATION_NOTICE"/></cbc:PlannedDate>
 			</xsl:when>
 			<xsl:when test="$eforms-notice-subtype = ('4', '6')">
 			<!-- WARNING: Future Notice (BT-127) is Mandatory for eForms subtypes 4 and 6, but no DATE_PUBLICATION_NOTICE was found in TED XML. -->
@@ -308,9 +308,9 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 		<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'OJEU Publication Date (OPP-012)'"/></xsl:call-template>
 		<!-- TBD: hard-coded for now -->
 		<efbc:PublicationDate>
-			<!-- 2023-03-14+01:00 -->
+			<!-- 2023-03-14 -->
 			<!--added dfo -->
-			<xsl:value-of select="//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE"/><xsl:text>+01:00</xsl:text>
+			<xsl:value-of select="//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE"/>
 			<!-- end added dfo -->
 		</efbc:PublicationDate>
 	</efac:Publication>

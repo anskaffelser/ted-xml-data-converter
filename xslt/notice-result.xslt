@@ -522,7 +522,7 @@ These instructions can be un-commented to show the variables
 	<xsl:variable name="date-conclusion-contract-list" select="fn:distinct-values(.//*:AWARDED_CONTRACT/*:DATE_CONCLUSION_CONTRACT)" as="xs:string*"/>
 	<xsl:choose>
 		<xsl:when test="fn:count($date-conclusion-contract-list) = 1">
-			<cbc:IssueDate><xsl:value-of select="$date-conclusion-contract-list[1]"/><xsl:text>+01:00</xsl:text></cbc:IssueDate>
+			<cbc:IssueDate><xsl:value-of select="$date-conclusion-contract-list[1]"/></cbc:IssueDate>
 		</xsl:when>
 		<xsl:when test="fn:count($date-conclusion-contract-list) &gt; 1">
 			<!-- WARNING: Multiple different dates were found in DATE_CONCLUSION_CONTRACT in the AWARD_CONTRACTs sharing the same CONTRACT_NO value -->
@@ -533,7 +533,7 @@ These instructions can be un-commented to show the variables
 			</xsl:variable>
 			<xsl:call-template name="report-warning"><xsl:with-param name="message" select="$message"/></xsl:call-template>
 			<xsl:for-each select="$date-conclusion-contract-list">
-				<cbc:IssueDate><xsl:value-of select="."/><xsl:text>+01:00</xsl:text></cbc:IssueDate>
+				<cbc:IssueDate><xsl:value-of select="."/></cbc:IssueDate>
 			</xsl:for-each>
 		</xsl:when>
 	</xsl:choose>

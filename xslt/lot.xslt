@@ -711,14 +711,14 @@
 				</efac:InterestExpressionReceptionPeriod>
 			</xsl:when>
 			<xsl:when test="($eforms-notice-subtype = ('10', '11', '12', '13', '14'))">
-				<!-- WARNING: Deadline Receipt Expressions (BT-630) is Mandatory for eForms subtypes 10, 11, 12, 13 and 14, but no DATE_RECEIPT_TENDERS was found in TED XML. In order to obtain valid XML for this notice, a far future date was used (2099-01-01+01:00). -->
-				<xsl:variable name="message">WARNING: Deadline Receipt Expressions (BT-630) is Mandatory for eForms subtypes 10, 11, 12, 13 and 14, but no DATE_RECEIPT_TENDERS was found in TED XML. In order to obtain valid XML for this notice, a far future date was used (2099-01-01+01:00).</xsl:variable>
+				<!-- WARNING: Deadline Receipt Expressions (BT-630) is Mandatory for eForms subtypes 10, 11, 12, 13 and 14, but no DATE_RECEIPT_TENDERS was found in TED XML. In order to obtain valid XML for this notice, a far future date was used (2099-01-01). -->
+				<xsl:variable name="message">WARNING: Deadline Receipt Expressions (BT-630) is Mandatory for eForms subtypes 10, 11, 12, 13 and 14, but no DATE_RECEIPT_TENDERS was found in TED XML. In order to obtain valid XML for this notice, a far future date was used (2099-01-01).</xsl:variable>
 				<xsl:call-template name="report-warning">
 					<xsl:with-param name="message" select="$message"/>
 				</xsl:call-template>
 				<efac:InterestExpressionReceptionPeriod>
-					<cbc:EndDate>2099-01-01+01:00</cbc:EndDate>
-					<cbc:EndTime>11:59:59+01:00</cbc:EndTime>
+					<cbc:EndDate>2099-01-01</cbc:EndDate>
+					<cbc:EndTime>11:59:59</cbc:EndTime>
 				</efac:InterestExpressionReceptionPeriod>
 			</xsl:when>
 		</xsl:choose>
@@ -736,14 +736,14 @@
 				</cac:TenderSubmissionDeadlinePeriod>
 			</xsl:when>
 			<xsl:when test="($eforms-notice-subtype = ('8'))">
-				<!-- WARNING: Deadline Receipt Tenders (BT-131) is Mandatory for eForms notice subtype 8, but no DATE_RECEIPT_TENDERS was found in TED XML. In order to obtain valid XML for this notice, a far future date was used (2099-01-01+01:00). -->
-				<xsl:variable name="message">WARNING: Deadline Receipt Tenders (BT-131) is Mandatory for eForms subtype 8, but no DATE_RECEIPT_TENDERS was found in TED XML. In order to obtain valid XML for this notice, a far future date was used (2099-01-01+01:00).</xsl:variable>
+				<!-- WARNING: Deadline Receipt Tenders (BT-131) is Mandatory for eForms notice subtype 8, but no DATE_RECEIPT_TENDERS was found in TED XML. In order to obtain valid XML for this notice, a far future date was used (2099-01-01). -->
+				<xsl:variable name="message">WARNING: Deadline Receipt Tenders (BT-131) is Mandatory for eForms subtype 8, but no DATE_RECEIPT_TENDERS was found in TED XML. In order to obtain valid XML for this notice, a far future date was used (2099-01-01).</xsl:variable>
 				<xsl:call-template name="report-warning">
 					<xsl:with-param name="message" select="$message"/>
 				</xsl:call-template>
 				<cac:TenderSubmissionDeadlinePeriod>
-					<cbc:EndDate>2099-01-01+01:00</cbc:EndDate>
-					<cbc:EndTime>11:59:59+01:00</cbc:EndTime>
+					<cbc:EndDate>2099-01-01</cbc:EndDate>
+					<cbc:EndTime>11:59:59</cbc:EndTime>
 				</cac:TenderSubmissionDeadlinePeriod>
 			</xsl:when>
 		</xsl:choose>
@@ -753,11 +753,11 @@
 		<!-- NOTE: cbc:EndDate and cbc:EndTime should contain ISO-8601 format dates, i.e. expressed as UTC with offsets. -->
 		<!-- TED date elements have no time zone associated, and TED time elements have "local time". -->
 		<!-- Therefore for complete accuracy, a mapping of country codes to UTC timezone offsets would be required -->
-		<!-- In this initial conversion, no such mapping is used, and TED dates and times are assumed to be CET, i.e. UTC+01:00 -->
-		<!-- If TIME_RECEIPT_TENDERS is not present, a time of 23:59+01:00 is assumed -->
+		<!-- In this initial conversion, no such mapping is used, and TED dates and times are assumed to be CET, i.e. UTC -->
+		<!-- If TIME_RECEIPT_TENDERS is not present, a time of 23:59 is assumed -->
 		<cbc:EndDate>
 			<xsl:value-of select="../../*:PROCEDURE/*:DATE_RECEIPT_TENDERS"/>
-			<xsl:text>+01:00</xsl:text>
+			
 		</cbc:EndDate>
 		<xsl:choose>
 			<xsl:when test="../../*:PROCEDURE/*:TIME_RECEIPT_TENDERS">
@@ -765,16 +765,16 @@
 					<!-- add any missing leading "0" from the hour -->
 					<xsl:value-of select="fn:replace(../../*:PROCEDURE/*:TIME_RECEIPT_TENDERS, '^([0-9]):', '0$1:')"/>
 					<!-- add ":00" for the seconds; add the TimeZone offset for CET -->
-					<xsl:text>:00+01:00</xsl:text>
+					<xsl:text>:00</xsl:text>
 				</cbc:EndTime>
 			</xsl:when>
 			<xsl:otherwise>
-				<!-- WARNING: TIME_RECEIPT_TENDERS was not found in TED XML. In order to obtain valid XML for this notice, a time of 23:59+01:00 was used. -->
-				<xsl:variable name="message">WARNING: TIME_RECEIPT_TENDERS was not found in TED XML. In order to obtain valid XML for this notice, a time of 23:59+01:00 was used.</xsl:variable>
+				<!-- WARNING: TIME_RECEIPT_TENDERS was not found in TED XML. In order to obtain valid XML for this notice, a time of 23:59 was used. -->
+				<xsl:variable name="message">WARNING: TIME_RECEIPT_TENDERS was not found in TED XML. In order to obtain valid XML for this notice, a time of 23:59 was used.</xsl:variable>
 				<xsl:call-template name="report-warning">
 					<xsl:with-param name="message" select="$message"/>
 				</xsl:call-template>
-				<cbc:EndTime>23:59:00+01:00</cbc:EndTime>
+				<cbc:EndTime>23:59:00</cbc:EndTime>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
@@ -783,11 +783,11 @@
 		<!-- NOTE: cbc:EndDate and cbc:EndTime should contain ISO-8601 format dates, i.e. expressed as UTC with offsets. -->
 		<!-- TED date elements have no time zone associated, and TED time elements have "local time". -->
 		<!-- Therefore for complete accuracy, a mapping of country codes to UTC timezone offsets is required -->
-		<!-- In this initial conversion, no such mapping is used, and TED dates and times are assumed to be CET, i.e. UTC+01:00 -->
+		<!-- In this initial conversion, no such mapping is used, and TED dates and times are assumed to be CET, i.e. UTC -->
 		<cac:InvitationSubmissionPeriod>
 			<cbc:StartDate>
 				<xsl:value-of select="."/>
-				<xsl:text>+01:00</xsl:text>
+				
 			</cbc:StartDate>
 		</cac:InvitationSubmissionPeriod>
 	</xsl:template>
@@ -841,13 +841,13 @@
 			<cbc:OccurrenceDate>
 				<xsl:value-of select="*:DATE_OPENING_TENDERS"/>
 				<!-- add the TimeZone offset for CET -->
-				<xsl:text>+01:00</xsl:text>
+				
 			</cbc:OccurrenceDate>
 			<cbc:OccurrenceTime>
 				<!-- add any missing leading "0" from the hour -->
 				<xsl:value-of select="fn:replace(*:TIME_OPENING_TENDERS, '^([0-9]):', '0$1:')"/>
 				<!-- add ":00" for the seconds; add the TimeZone offset for CET -->
-				<xsl:text>:00+01:00</xsl:text>
+				<xsl:text>:00</xsl:text>
 			</cbc:OccurrenceTime>
 			<xsl:apply-templates select="*:INFO_ADD"/>
 			<xsl:apply-templates select="*:PLACE"/>
@@ -1246,23 +1246,23 @@
 		<cac:PlannedPeriod>
 			<cbc:StartDate>
 				<xsl:value-of select="."/>
-				<xsl:text>+01:00</xsl:text>
+				
 			</cbc:StartDate>
 			<xsl:choose>
 				<xsl:when test="../*:DATE_END">
 					<cbc:EndDate>
 						<xsl:value-of select="../*:DATE_END"/>
-						<xsl:text>+01:00</xsl:text>
+						
 					</cbc:EndDate>
 				</xsl:when>
 				<xsl:otherwise>
-					<!-- WARNING: Duration Other (BT-538) cbc:EndDate is required but the source TED notice does not contain DATE_END. In order to obtain valid XML for this notice, a far future date was used (2099-12-31+01:00) -->
-					<xsl:variable name="message">WARNING: Duration Other (BT-538) cbc:EndDate is required but the source TED notice does not contain DATE_END. In order to obtain valid XML for this notice, a far future date was used (2099-12-31+01:00).</xsl:variable>
+					<!-- WARNING: Duration Other (BT-538) cbc:EndDate is required but the source TED notice does not contain DATE_END. In order to obtain valid XML for this notice, a far future date was used (2099-12-31) -->
+					<xsl:variable name="message">WARNING: Duration Other (BT-538) cbc:EndDate is required but the source TED notice does not contain DATE_END. In order to obtain valid XML for this notice, a far future date was used (2099-12-31).</xsl:variable>
 					<xsl:call-template name="report-warning">
 						<xsl:with-param name="message" select="$message"/>
 					</xsl:call-template>
 					<cbc:EndDate>
-						<xsl:text>2099-12-31+01:00</xsl:text>
+						<xsl:text>2099-12-31</xsl:text>
 					</cbc:EndDate>
 				</xsl:otherwise>
 			</xsl:choose>
@@ -1271,17 +1271,17 @@
 
 	<xsl:template match="*:DATE_END[fn:not(../*:DATE_START)]">
 		<cac:PlannedPeriod>
-			<!-- WARNING: cbc:StartDate is required but the source TED notice does not contain DATE_START. In order to obtain valid XML for this notice, a far past date was used (1900-01-01+01:00) -->
-			<xsl:variable name="message">WARNING: cbc:StartDate is required but the source TED notice does not contain DATE_START. In order to obtain valid XML for this notice, a far past date was used (1900-01-01+01:00).</xsl:variable>
+			<!-- WARNING: cbc:StartDate is required but the source TED notice does not contain DATE_START. In order to obtain valid XML for this notice, a far past date was used (1900-01-01) -->
+			<xsl:variable name="message">WARNING: cbc:StartDate is required but the source TED notice does not contain DATE_START. In order to obtain valid XML for this notice, a far past date was used (1900-01-01).</xsl:variable>
 			<xsl:call-template name="report-warning">
 				<xsl:with-param name="message" select="$message"/>
 			</xsl:call-template>
 			<cbc:StartDate>
-				<xsl:text>1900-01-01+01:00</xsl:text>
+				<xsl:text>1900-01-01</xsl:text>
 			</cbc:StartDate>
 			<cbc:EndDate>
 				<xsl:value-of select="."/>
-				<xsl:text>+01:00</xsl:text>
+				
 			</cbc:EndDate>
 		</cac:PlannedPeriod>
 	</xsl:template>
