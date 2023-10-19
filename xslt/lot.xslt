@@ -1159,10 +1159,20 @@
 		<xsl:variable name="valid-nuts" select="opfun:get-valid-nuts-codes(*:NUTS/@CODE)"/>
 		<xsl:variable name="main-nuts" select="$valid-nuts[1]"/>
 		<xsl:variable name="rest-nuts" select="functx:value-except($valid-nuts, $main-nuts)"/>
-		
-		<xsl:for-each select="//LOCATION">
-			<dfo:Location><xsl:value-of select="@code"></xsl:value-of></dfo:Location>
-		</xsl:for-each>
+		<xsl:variable name="nuts-mapping-file" select="fn:document('location-nuts-mapping.xml')"/>
+
+		<xsl:variable name="mappedNuts" as="item()*">
+			<xsl:if test="count(//LOCATION) &gt; 0">
+				<xsl:for-each select="//LOCATION">			
+					<xsl:variable name="locationCode" select="@code"/>
+					<xsl:variable name="mapped" select="$nuts-mapping-file/root/row[location eq $locationCode]/nuts"/>
+				
+					<xsl:if test="$mapped">
+						<nuts><xsl:value-of select="$mapped"/></nuts>
+					</xsl:if>
+				</xsl:for-each>
+			</xsl:if>
+		</xsl:variable>
 		
 		<xsl:if test="fn:normalize-space(*:MAIN_SITE) or fn:not(fn:empty($valid-nuts)) or $eforms-notice-subtype = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '29', '30', '31', '32', '33', '34', '35', '36', '37')">
 			<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'Place of performance (BG-708) : Place Performance: Additional Information (BT-728), City (BT-5131), Post Code (BT-5121), Country Subdivision (BT-5071), Services Other (as a codelist) (BT-727), Street (BT-5101), Code (BT-5141)'"/></xsl:call-template>
@@ -1172,6 +1182,11 @@
 					<cac:RealizedLocation>
 						<cac:Address>
 							<cbc:Region>anyw</cbc:Region>
+							<xsl:for-each select="fn:distinct-values($mappedNuts)">
+								<cbc:CountrySubentityCode listName="nuts">
+									<xsl:value-of select="."/>
+								</cbc:CountrySubentityCode>
+							</xsl:for-each>
 						</cac:Address>
 					</cac:RealizedLocation>
 				</xsl:when>

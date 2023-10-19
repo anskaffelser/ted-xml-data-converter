@@ -23,7 +23,7 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 <xsl:variable name="ted-addresses" as="element()">
 	<ted-orgs>
 		<xsl:for-each select="$ted-form-main-element/(*:CONTRACTING_BODY/(*:ADDRESS_CONTRACTING_BODY | *:ADDRESS_CONTRACTING_BODY_ADDITIONAL | *:ADDRESS_FURTHER_INFO | *:ADDRESS_PARTICIPATION) | *:COMPLEMENTARY_INFO/(*:ADDRESS_REVIEW_BODY | *:ADDRESS_MEDIATION_BODY | *:ADDRESS_REVIEW_INFO) | *:AWARD_CONTRACT/*:AWARDED_CONTRACT/*:CONTRACTORS/*:CONTRACTOR/(*:ADDRESS_CONTRACTOR | *:ADDRESS_PARTY)| *:AWARD_CONTRACT/*:AWARDED_CONTRACT/*:CONTRACTOR/(*:ADDRESS_CONTRACTOR | *:ADDRESS_PARTY))">
-			<ted-org>
+				<ted-org>
 				<xsl:variable name="path" select="functx:path-to-node-with-pos(.)"/>
 				<path><xsl:value-of select="$path"/></path>
 				<ted-address>
