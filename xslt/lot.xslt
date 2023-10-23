@@ -755,28 +755,27 @@
 		<!-- Therefore for complete accuracy, a mapping of country codes to UTC timezone offsets would be required -->
 		<!-- In this initial conversion, no such mapping is used, and TED dates and times are assumed to be CET, i.e. UTC -->
 		<!-- If TIME_RECEIPT_TENDERS is not present, a time of 23:59 is assumed -->
-		<cbc:EndDate>
-			<xsl:value-of select="../../*:PROCEDURE/*:DATE_RECEIPT_TENDERS"/>
-			
-		</cbc:EndDate>
-		<xsl:choose>
-			<xsl:when test="../../*:PROCEDURE/*:TIME_RECEIPT_TENDERS">
-				<cbc:EndTime>
-					<!-- add any missing leading "0" from the hour -->
-					<xsl:value-of select="fn:replace(../../*:PROCEDURE/*:TIME_RECEIPT_TENDERS, '^([0-9]):', '0$1:')"/>
-					<!-- add ":00" for the seconds; add the TimeZone offset for CET -->
-					<xsl:text>:00</xsl:text>
-				</cbc:EndTime>
-			</xsl:when>
-			<xsl:otherwise>
-				<!-- WARNING: TIME_RECEIPT_TENDERS was not found in TED XML. In order to obtain valid XML for this notice, a time of 23:59 was used. -->
-				<xsl:variable name="message">WARNING: TIME_RECEIPT_TENDERS was not found in TED XML. In order to obtain valid XML for this notice, a time of 23:59 was used.</xsl:variable>
-				<xsl:call-template name="report-warning">
-					<xsl:with-param name="message" select="$message"/>
-				</xsl:call-template>
-				<cbc:EndTime>23:59:00</cbc:EndTime>
-			</xsl:otherwise>
-		</xsl:choose>
+
+		<xsl:variable name="datePart" select="../../*:PROCEDURE/*:DATE_RECEIPT_TENDERS"/>
+		<xsl:variable name="timePart">
+			<xsl:choose>
+				<xsl:when test="../../*:PROCEDURE/*:TIME_RECEIPT_TENDERS">
+					<xsl:choose>
+						<xsl:when test="number(translate($datePart, '-', '')) > number(translate('2023-10-29', '-', ''))">T<xsl:value-of select="../../*:PROCEDURE/*:TIME_RECEIPT_TENDERS"/>:00+01:00</xsl:when>
+						<xsl:otherwise>T<xsl:value-of select="../../*:PROCEDURE/*:TIME_RECEIPT_TENDERS"/>:00+02:00</xsl:otherwise>
+					</xsl:choose>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:choose>
+						<xsl:when test="number(translate($datePart, '-', '')) > number(translate('2023-10-29', '-', ''))">T23:59:00+01:00</xsl:when>
+						<xsl:otherwise>T23:59:00+02:00</xsl:otherwise>
+					</xsl:choose>					
+				</xsl:otherwise>				
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:variable name="datetimeAsString" select="concat($datePart, $timePart)"></xsl:variable>
+		<cbc:EndDate><xsl:value-of select="format-dateTime(xs:dateTime($datetimeAsString), '[Y0001]-[M01]-[D01][Z]')"/></cbc:EndDate>
+		<cbc:EndTime><xsl:value-of select="format-dateTime(xs:dateTime($datetimeAsString), '[H01]:[m01]:[s01][Z]')"/></cbc:EndTime>
 	</xsl:template>
 
 	<xsl:template match="*:DATE_DISPATCH_INVITATIONS">
@@ -837,17 +836,32 @@
 	</xsl:template>
 
 	<xsl:template match="*:OPENING_CONDITION">
+
+		<xsl:variable name="datePart" select="*:DATE_OPENING_TENDERS"/>
+		<xsl:variable name="timePart">
+			<xsl:choose>
+				<xsl:when test="*:TIME_OPENING_TENDERS">
+					<xsl:choose>
+						<xsl:when test="number(translate($datePart, '-', '')) > number(translate('2023-10-29', '-', ''))">T<xsl:value-of select="*:TIME_OPENING_TENDERS"/>:00+01:00</xsl:when>
+						<xsl:otherwise>T<xsl:value-of select="*:TIME_OPENING_TENDERS"/>:00+02:00</xsl:otherwise>
+					</xsl:choose>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:choose>
+						<xsl:when test="number(translate($datePart, '-', '')) > number(translate('2023-10-29', '-', ''))">T23:59:00+01:00</xsl:when>
+						<xsl:otherwise>T23:59:00+02:00</xsl:otherwise>
+					</xsl:choose>					
+				</xsl:otherwise>				
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:variable name="datetimeAsString" select="concat($datePart, $timePart)"></xsl:variable>
+		
 		<cac:OpenTenderEvent>
 			<cbc:OccurrenceDate>
-				<xsl:value-of select="*:DATE_OPENING_TENDERS"/>
-				<!-- add the TimeZone offset for CET -->
-				
+				<xsl:value-of select="format-dateTime(xs:dateTime($datetimeAsString), '[Y0001]-[M01]-[D01][Z]')"/>
 			</cbc:OccurrenceDate>
 			<cbc:OccurrenceTime>
-				<!-- add any missing leading "0" from the hour -->
-				<xsl:value-of select="fn:replace(*:TIME_OPENING_TENDERS, '^([0-9]):', '0$1:')"/>
-				<!-- add ":00" for the seconds; add the TimeZone offset for CET -->
-				<xsl:text>:00</xsl:text>
+				<xsl:value-of select="format-dateTime(xs:dateTime($datetimeAsString), '[H01]:[m01]:[s01][Z]')"/>			
 			</cbc:OccurrenceTime>
 			<xsl:apply-templates select="*:INFO_ADD"/>
 			<xsl:apply-templates select="*:PLACE"/>
@@ -1274,15 +1288,25 @@
 
 	<xsl:template match="*:DATE_START">
 		<cac:PlannedPeriod>
+			<xsl:variable name="dateStartAsString">
+				<xsl:choose>
+					<xsl:when test="number(translate(., '-', '')) > number(translate('2023-10-29', '-', ''))"><xsl:value-of select="."></xsl:value-of>T12:00:00+01:00</xsl:when>
+					<xsl:otherwise><xsl:value-of select="."></xsl:value-of>T12:00:00+02:00</xsl:otherwise>
+				</xsl:choose>	  	
+			</xsl:variable>
 			<cbc:StartDate>
-				<xsl:value-of select="."/>
-				
+				<xsl:value-of select="format-dateTime(xs:dateTime($dateStartAsString), '[Y0001]-[M01]-[D01][Z]')"/>
 			</cbc:StartDate>
 			<xsl:choose>
 				<xsl:when test="../*:DATE_END">
+					<xsl:variable name="dateEndAsString">
+						<xsl:choose>
+							<xsl:when test="number(translate(../*:DATE_END, '-', '')) > number(translate('2023-10-29', '-', ''))"><xsl:value-of select="../*:DATE_END"></xsl:value-of>T12:00:00+01:00</xsl:when>
+							<xsl:otherwise><xsl:value-of select="../*:DATE_END"></xsl:value-of>T12:00:00+02:00</xsl:otherwise>
+						</xsl:choose>	  	
+					</xsl:variable>			
 					<cbc:EndDate>
-						<xsl:value-of select="../*:DATE_END"/>
-						
+						<xsl:value-of select="format-dateTime(xs:dateTime($dateEndAsString), '[Y0001]-[M01]-[D01][Z]')"/>						
 					</cbc:EndDate>
 				</xsl:when>
 				<xsl:otherwise>
@@ -1310,8 +1334,7 @@
 				<xsl:text>1900-01-01</xsl:text>
 			</cbc:StartDate>
 			<cbc:EndDate>
-				<xsl:value-of select="."/>
-				
+				<xsl:value-of select="."/>Z				
 			</cbc:EndDate>
 		</cac:PlannedPeriod>
 	</xsl:template>

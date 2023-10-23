@@ -219,9 +219,6 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 
 		<!-- edn added dfo -->
 
-
-
-
 	</cbc:CustomizationID>
 	<!-- Notice Identifier (BT-701): eForms documentation cardinality (Procedure) = 1 | Mandatory for ALL subtypes -->
 	<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'Notice Identifier (BT-701)'"/></xsl:call-template>
@@ -243,8 +240,14 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 	<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'Notice Dispatch Date (BT-05)'"/></xsl:call-template>
 	<xsl:choose>
 	  <xsl:when test="*:COMPLEMENTARY_INFO/*:DATE_DISPATCH_NOTICE">
-		<cbc:IssueDate><xsl:value-of select="*:COMPLEMENTARY_INFO/*:DATE_DISPATCH_NOTICE"/></cbc:IssueDate>
-		<cbc:IssueTime>12:00:00</cbc:IssueTime>
+	  	<xsl:variable name="datetimeAsString">
+	  		<xsl:choose>
+	  			<xsl:when test="number(translate(*:COMPLEMENTARY_INFO/*:DATE_DISPATCH_NOTICE, '-', '')) > number(translate('2023-10-29', '-', ''))"><xsl:value-of select="*:COMPLEMENTARY_INFO/*:DATE_DISPATCH_NOTICE"></xsl:value-of>T12:00:00+01:00</xsl:when>
+	  			<xsl:otherwise><xsl:value-of select="*:COMPLEMENTARY_INFO/*:DATE_DISPATCH_NOTICE"></xsl:value-of>T12:00:00+02:00</xsl:otherwise>
+	  		</xsl:choose>	  	
+	  	</xsl:variable>
+		  <cbc:IssueDate><xsl:value-of select="format-dateTime(xs:dateTime($datetimeAsString), '[Y0001]-[M01]-[D01][Z]')"/></cbc:IssueDate>
+	  	<cbc:IssueTime><xsl:value-of select="format-dateTime(xs:dateTime($datetimeAsString), '[H01]:[m01]:[s01][Z]')"/></cbc:IssueTime>
 	  </xsl:when>
 	  <xsl:otherwise>
 		<!-- WARNING: Notice Dispatch Date (BT-05) is Mandatory for all eForms subtypes, but no DATE_DISPATCH_NOTICE was found in TED XML. -->
@@ -312,10 +315,20 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 		<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'OJEU Publication Date (OPP-012)'"/></xsl:call-template>
 		<!-- TBD: hard-coded for now -->
 		<efbc:PublicationDate>
-			<!-- 2023-03-14 -->
-			<!--added dfo -->
-			<xsl:value-of select="//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE"/>
-			<!-- end added dfo -->
+			<xsl:choose>
+				<xsl:when test="*//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE">
+					<xsl:variable name="datetimeAsString">
+						<xsl:choose>
+							<xsl:when test="number(translate(//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE, '-', '')) > number(translate('2023-10-29', '-', ''))"><xsl:value-of select="//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE"></xsl:value-of>T12:00:00+01:00</xsl:when>
+							<xsl:otherwise><xsl:value-of select="//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE"></xsl:value-of>T12:00:00+02:00</xsl:otherwise>
+						</xsl:choose>	  	
+					</xsl:variable>
+					<xsl:value-of select="format-dateTime(xs:dateTime($datetimeAsString), '[Y0001]-[M01]-[D01][Z]')"/>
+				</xsl:when>
+				<xsl:otherwise>
+					2023-03-14					
+				</xsl:otherwise>
+			</xsl:choose>
 		</efbc:PublicationDate>
 	</efac:Publication>
 </xsl:template>
@@ -327,14 +340,6 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 </xsl:template>
 
 <!-- end of Procedure-level templates for Notice information -->
-
-
-
-
-
-
-
-
 
 <!-- Procedure-level templates for Tendering Terms -->
 
