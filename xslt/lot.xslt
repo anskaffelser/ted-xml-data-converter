@@ -761,13 +761,13 @@
 			<xsl:choose>
 				<xsl:when test="../../*:PROCEDURE/*:TIME_RECEIPT_TENDERS">
 					<xsl:choose>
-						<xsl:when test="number(translate($datePart, '-', '')) > number(translate('2023-10-29', '-', ''))">T<xsl:value-of select="../../*:PROCEDURE/*:TIME_RECEIPT_TENDERS"/>:00+01:00</xsl:when>
+						<xsl:when test="number(translate($datePart, '-', '')) > number(translate('2023-10-28', '-', ''))">T<xsl:value-of select="../../*:PROCEDURE/*:TIME_RECEIPT_TENDERS"/>:00+01:00</xsl:when>
 						<xsl:otherwise>T<xsl:value-of select="../../*:PROCEDURE/*:TIME_RECEIPT_TENDERS"/>:00+02:00</xsl:otherwise>
 					</xsl:choose>
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:choose>
-						<xsl:when test="number(translate($datePart, '-', '')) > number(translate('2023-10-29', '-', ''))">T23:59:00+01:00</xsl:when>
+						<xsl:when test="number(translate($datePart, '-', '')) > number(translate('2023-10-28', '-', ''))">T23:59:00+01:00</xsl:when>
 						<xsl:otherwise>T23:59:00+02:00</xsl:otherwise>
 					</xsl:choose>					
 				</xsl:otherwise>				
@@ -842,13 +842,13 @@
 			<xsl:choose>
 				<xsl:when test="*:TIME_OPENING_TENDERS">
 					<xsl:choose>
-						<xsl:when test="number(translate($datePart, '-', '')) > number(translate('2023-10-29', '-', ''))">T<xsl:value-of select="*:TIME_OPENING_TENDERS"/>:00+01:00</xsl:when>
+						<xsl:when test="number(translate($datePart, '-', '')) > number(translate('2023-10-28', '-', ''))">T<xsl:value-of select="*:TIME_OPENING_TENDERS"/>:00+01:00</xsl:when>
 						<xsl:otherwise>T<xsl:value-of select="*:TIME_OPENING_TENDERS"/>:00+02:00</xsl:otherwise>
 					</xsl:choose>
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:choose>
-						<xsl:when test="number(translate($datePart, '-', '')) > number(translate('2023-10-29', '-', ''))">T23:59:00+01:00</xsl:when>
+						<xsl:when test="number(translate($datePart, '-', '')) > number(translate('2023-10-28', '-', ''))">T23:59:00+01:00</xsl:when>
 						<xsl:otherwise>T23:59:00+02:00</xsl:otherwise>
 					</xsl:choose>					
 				</xsl:otherwise>				
@@ -1290,7 +1290,7 @@
 		<cac:PlannedPeriod>
 			<xsl:variable name="dateStartAsString">
 				<xsl:choose>
-					<xsl:when test="number(translate(., '-', '')) > number(translate('2023-10-29', '-', ''))"><xsl:value-of select="."></xsl:value-of>T12:00:00+01:00</xsl:when>
+					<xsl:when test="number(translate(., '-', '')) > number(translate('2023-10-28', '-', ''))"><xsl:value-of select="."></xsl:value-of>T12:00:00+01:00</xsl:when>
 					<xsl:otherwise><xsl:value-of select="."></xsl:value-of>T12:00:00+02:00</xsl:otherwise>
 				</xsl:choose>	  	
 			</xsl:variable>
@@ -1301,7 +1301,7 @@
 				<xsl:when test="../*:DATE_END">
 					<xsl:variable name="dateEndAsString">
 						<xsl:choose>
-							<xsl:when test="number(translate(../*:DATE_END, '-', '')) > number(translate('2023-10-29', '-', ''))"><xsl:value-of select="../*:DATE_END"></xsl:value-of>T12:00:00+01:00</xsl:when>
+							<xsl:when test="number(translate(../*:DATE_END, '-', '')) > number(translate('2023-10-28', '-', ''))"><xsl:value-of select="../*:DATE_END"></xsl:value-of>T12:00:00+01:00</xsl:when>
 							<xsl:otherwise><xsl:value-of select="../*:DATE_END"></xsl:value-of>T12:00:00+02:00</xsl:otherwise>
 						</xsl:choose>	  	
 					</xsl:variable>			

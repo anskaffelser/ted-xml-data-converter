@@ -167,7 +167,8 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 					    <cbc:SubTypeCode listName="notice-subtype">
 					    	<xsl:if test="$ted-form-name eq 'F52'">N</xsl:if>
 					    	<xsl:if test="$ted-form-name eq 'F65'">N</xsl:if>
-							<xsl:value-of select="$eforms-notice-subtype"/>
+					    	<xsl:if test="$ted-form-name eq 'F102'">N</xsl:if>
+					    	<xsl:value-of select="$eforms-notice-subtype"/>
 						</cbc:SubTypeCode>
 					    <!-- end DFO juks -->
 					</efac:NoticeSubType>
@@ -242,7 +243,7 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 	  <xsl:when test="*:COMPLEMENTARY_INFO/*:DATE_DISPATCH_NOTICE">
 	  	<xsl:variable name="datetimeAsString">
 	  		<xsl:choose>
-	  			<xsl:when test="number(translate(*:COMPLEMENTARY_INFO/*:DATE_DISPATCH_NOTICE, '-', '')) > number(translate('2023-10-29', '-', ''))"><xsl:value-of select="*:COMPLEMENTARY_INFO/*:DATE_DISPATCH_NOTICE"></xsl:value-of>T12:00:00+01:00</xsl:when>
+	  			<xsl:when test="number(translate(*:COMPLEMENTARY_INFO/*:DATE_DISPATCH_NOTICE, '-', '')) > number(translate('2023-10-28', '-', ''))"><xsl:value-of select="*:COMPLEMENTARY_INFO/*:DATE_DISPATCH_NOTICE"></xsl:value-of>T12:00:00+01:00</xsl:when>
 	  			<xsl:otherwise><xsl:value-of select="*:COMPLEMENTARY_INFO/*:DATE_DISPATCH_NOTICE"></xsl:value-of>T12:00:00+02:00</xsl:otherwise>
 	  		</xsl:choose>	  	
 	  	</xsl:variable>
@@ -319,7 +320,7 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 				<xsl:when test="*//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE">
 					<xsl:variable name="datetimeAsString">
 						<xsl:choose>
-							<xsl:when test="number(translate(//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE, '-', '')) > number(translate('2023-10-29', '-', ''))"><xsl:value-of select="//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE"></xsl:value-of>T12:00:00+01:00</xsl:when>
+							<xsl:when test="number(translate(//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE, '-', '')) > number(translate('2023-10-28', '-', ''))"><xsl:value-of select="//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE"></xsl:value-of>T12:00:00+01:00</xsl:when>
 							<xsl:otherwise><xsl:value-of select="//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE"></xsl:value-of>T12:00:00+02:00</xsl:otherwise>
 						</xsl:choose>	  	
 					</xsl:variable>
