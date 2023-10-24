@@ -165,9 +165,11 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 						https://www.doffin.no/Notice/Details/2023-335996
 						-->
 					    <cbc:SubTypeCode listName="notice-subtype">
-					    	<xsl:if test="$ted-form-name eq 'F52'">N</xsl:if>
-					    	<xsl:if test="$ted-form-name eq 'F65'">N</xsl:if>
-					    	<xsl:if test="$ted-form-name eq 'F102'">N</xsl:if>
+					    	<xsl:if test="$eforms-notice-subtype != 99">
+						    	<xsl:if test="$ted-form-name eq 'F52'">N</xsl:if>
+						    	<xsl:if test="$ted-form-name eq 'F65'">N</xsl:if>
+						    	<xsl:if test="$ted-form-name eq 'F102'">N</xsl:if>
+					    	</xsl:if>
 					    	<xsl:value-of select="$eforms-notice-subtype"/>
 						</cbc:SubTypeCode>
 					    <!-- end DFO juks -->
