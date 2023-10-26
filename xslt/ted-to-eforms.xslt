@@ -309,17 +309,23 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 		<!-- Notice Publication Identifier (OPP-010): eForms documentation cardinality (Procedure) = ? -->
 		<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'Notice Publication Identifier (OPP-010)'"/></xsl:call-template>
 		<!-- TBD: hard-coded for now -->
-		<efbc:NoticePublicationID schemeName="ojs-notice-id">12345678-2023</efbc:NoticePublicationID>
+		
+		<efbc:NoticePublicationID schemeName="ojs-notice-id">
+			<xsl:choose>
+				<xsl:when test="//PROCEDURE/NOTICE_NUMBER_OJ"><xsl:value-of select="//PROCEDURE/NOTICE_NUMBER_OJ"/></xsl:when>
+				<xsl:otherwise>n.a.</xsl:otherwise>
+			</xsl:choose>
+		</efbc:NoticePublicationID>
+		
 		<!-- OJEU Identifier (OPP-011): eForms documentation cardinality (Procedure) = ? -->
 		<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'OJEU Identifier (OPP-011)'"/></xsl:call-template>
 		<!-- TBD: hard-coded for now -->
-		<efbc:GazetteID schemeName="ojs-id">123/2023</efbc:GazetteID>
+		<!-- efbc:GazetteID schemeName="ojs-id">123/2023</efbc:GazetteID-->
 		<!-- OJEU Publication Date (OPP-012): eForms documentation cardinality (Procedure) = ? -->
 		<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'OJEU Publication Date (OPP-012)'"/></xsl:call-template>
-		<!-- TBD: hard-coded for now -->
 		<efbc:PublicationDate>
 			<xsl:choose>
-				<xsl:when test="*//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE">
+				<xsl:when test="//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE">
 					<xsl:variable name="datetimeAsString">
 						<xsl:choose>
 							<xsl:when test="number(translate(//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE, '-', '')) > number(translate('2023-10-28', '-', ''))"><xsl:value-of select="//COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE"></xsl:value-of>T12:00:00+01:00</xsl:when>
