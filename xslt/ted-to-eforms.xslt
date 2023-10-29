@@ -141,6 +141,13 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 		<ext:UBLExtension>
 			<ext:ExtensionContent>
 				<efext:EformsExtension>
+					<xsl:if test="$eforms-notice-subtype = '99'">
+						<xsl:if test="//COMPLEMENTARY_INFO/NO_DOC_EXT">
+							<efac:Changes>								
+								<efbc:ChangedNoticeIdentifier schemeName="ojs-notice-id"><xsl:value-of select="//COMPLEMENTARY_INFO/NO_DOC_EXT"/></efbc:ChangedNoticeIdentifier>
+							</efac:Changes>
+						</xsl:if>
+					</xsl:if>					
 					<xsl:if test="$eforms-document-type eq 'CAN'">
 					</xsl:if>
 					<xsl:if test="$ted-form-notice-type eq '14'">
@@ -229,9 +236,6 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 	<!-- added dfo -->
 	<xsl:if test="$eforms-notice-subtype = '99'">
 		<cbc:URI>https://classic.doffin.no/Notice/Details/<xsl:value-of select="$notice-identifier"/></cbc:URI>
-		<xsl:if test="//COMPLEMENTARY_INFO/NO_DOC_EXT">
-			<dfo:Updates><xsl:value-of select="//COMPLEMENTARY_INFO/NO_DOC_EXT"></xsl:value-of></dfo:Updates>
-		</xsl:if>
 	</xsl:if>
 	<!-- end added dfo  -->
 	<xsl:if test="not($eforms-notice-subtype = ('1', '2', '3', '4', '5', '6', '7', '8', '9'))">
