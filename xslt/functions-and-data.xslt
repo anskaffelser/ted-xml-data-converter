@@ -37,7 +37,12 @@ end orig code -->
 <!-- dfo change end -->
 
 <!-- Value for BT-04 Procedure Identifier -->
-<xsl:param name="procedure-identifier" select="uuid:get-uuid($ted-form-main-element)" as="xs:string"/>
+<xsl:param name="procedure-identifier" as="xs:string">
+	<xsl:choose>
+		<xsl:when test="//COMPLEMENTARY_INFO/NO_DOC_EXT"><xsl:value-of select="//COMPLEMENTARY_INFO/NO_DOC_EXT"/></xsl:when>
+		<xsl:otherwise><xsl:value-of select="$notice-identifier"/></xsl:otherwise>		
+	</xsl:choose>
+</xsl:param>
 <!-- Value for SDK version -->
 <xsl:param name="sdk-version" select="$sdk-version-default" as="xs:string"/>
 
