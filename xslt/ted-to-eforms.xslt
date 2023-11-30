@@ -232,7 +232,10 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 	</cbc:CustomizationID>
 	<!-- Notice Identifier (BT-701): eForms documentation cardinality (Procedure) = 1 | Mandatory for ALL subtypes -->
 	<xsl:call-template name="include-comment"><xsl:with-param name="comment" select="'Notice Identifier (BT-701)'"/></xsl:call-template>
-	<cbc:ID schemeName="notice-id"><xsl:value-of select="$notice-identifier"/></cbc:ID>
+	<cbc:ID schemeName="notice-id">
+		<xsl:variable name="notice-identifier-local" select="substring-before(tokenize(base-uri(.), '/')[last()], '.')" as="xs:string"/>
+		<xsl:value-of select="$notice-identifier-local"/>
+	</cbc:ID>
 	<!-- added dfo -->
 	<xsl:if test="$eforms-notice-subtype = '99'">
 		<cbc:URI>https://classic.doffin.no/Notice/Details/<xsl:value-of select="$notice-identifier"/></cbc:URI>
