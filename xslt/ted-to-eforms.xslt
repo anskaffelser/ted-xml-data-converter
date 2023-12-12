@@ -274,7 +274,7 @@ exclude-result-prefixes="xlink xs xsi fn functx doc opfun ted ted-1 ted-2 gc n20
 	<xsl:if test="$eforms-notice-subtype = ('4', '5', '6', '7', '8', '9')">
 		<xsl:choose>
 			<xsl:when test="*:OBJECT_CONTRACT/*:DATE_PUBLICATION_NOTICE">
-				<cbc:PlannedDate><xsl:value-of select="*:OBJECT_CONTRACT/*:DATE_PUBLICATION_NOTICE"/></cbc:PlannedDate>
+				<cbc:PlannedDate><xsl:value-of select="*:OBJECT_CONTRACT/*:DATE_PUBLICATION_NOTICE[0]"/></cbc:PlannedDate>
 			</xsl:when>
 			<xsl:when test="$eforms-notice-subtype = ('4', '6')">
 			<!-- WARNING: Future Notice (BT-127) is Mandatory for eForms subtypes 4 and 6, but no DATE_PUBLICATION_NOTICE was found in TED XML. -->

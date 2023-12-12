@@ -717,7 +717,7 @@
 					<xsl:with-param name="message" select="$message"/>
 				</xsl:call-template>
 				<efac:InterestExpressionReceptionPeriod>
-					<cbc:EndDate>2099-01-01</cbc:EndDate>
+					<cbc:EndDate>2099-01-01Z</cbc:EndDate>
 					<cbc:EndTime>11:59:59</cbc:EndTime>
 				</efac:InterestExpressionReceptionPeriod>
 			</xsl:when>
