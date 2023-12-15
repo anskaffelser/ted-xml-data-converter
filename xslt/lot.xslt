@@ -1316,7 +1316,7 @@
 						<xsl:with-param name="message" select="$message"/>
 					</xsl:call-template>
 					<cbc:EndDate>
-						<xsl:text>2099-12-31</xsl:text>
+						<xsl:text>2099-12-31Z</xsl:text>
 					</cbc:EndDate>
 				</xsl:otherwise>
 			</xsl:choose>
