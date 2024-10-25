@@ -46,7 +46,7 @@ The versioning scheme which will be adopted for the TED XML Data Converter will 
 
 ## Feedback
 
-Feedback on this converter is welcome. Please address questions, comments and bug reports using [Github Discussions](https://github.com/OP-TED/ted-xml-data-converter/discussions).
+Feedback on this converter is welcome. Please address questions, comments and bug reports using [Github Discussions](https://github.com/anskaffelser/ted-xml-data-converter/discussions).
 
 
 ## Current status
